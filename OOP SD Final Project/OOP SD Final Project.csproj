@@ -78,21 +78,6 @@
     <Compile Include="Screen2Form.Designer.cs">
       <DependentUpon>Screen2Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screen3Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen3Form.Designer.cs">
-      <DependentUpon>Screen3Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screen3_1Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen3_1Form.Designer.cs">
-      <DependentUpon>Screen3_1Form.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -114,13 +99,6 @@
     <EmbeddedResource Include="Screen2Form.resx">
       <DependentUpon>Screen2Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screen3Form.resx">
-      <DependentUpon>Screen3Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screen3_1Form.resx">
-      <DependentUpon>Screen3_1Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -133,10 +111,43 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
+<ItemGroup>
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\packages\StyleCop.Analyzers.1.1.118\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+ </ItemGroup>
   </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Project Database.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Project Database_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>Project Database.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
