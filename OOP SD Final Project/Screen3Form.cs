@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OOP_Design_Project
+namespace OOP_SD_Final_Project
 {
-    public partial class Screen1Form : Form
+    public partial class Screen3Form : Form
     {
-        public Screen1Form()
+        public Screen3Form()
         {
             InitializeComponent();
         }
