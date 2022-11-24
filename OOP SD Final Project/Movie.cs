@@ -8,6 +8,7 @@ namespace OOP_SD_Final_Project
 {
     internal class Movie
     {
+        private string movieId;
         private string title;
         private string genre;
         private string minutes;
@@ -24,6 +25,8 @@ namespace OOP_SD_Final_Project
             Genre = genre;
             Minutes = minutes;
         }
+
+        public int MovieId { get { return movieId; } }
 
         public string Title { get { return title; } set { title = value; } }
 
