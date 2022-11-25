@@ -19,8 +19,14 @@ namespace OOP_SD_Final_Project
 
         }
 
+        /// <summary>
+        /// The unique ID associated with the Ticket.
+        /// </summary>
         public int TicketId { get { return ticketId; } set { ticketId = value; } }
 
+        /// <summary>
+        /// The ShowTime associated with the Ticket.
+        /// </summary>
         public ShowTime ShowTime { get { return showTime; } set { showTime = value; } }
     }
 }

@@ -47,7 +47,6 @@ namespace OOP_SD_Final_Project
                 int ticketsSold = ticketList.Count;
 
                 return maxSeats - ticketsSold;
-
             }
         }
     }

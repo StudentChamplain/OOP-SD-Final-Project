@@ -13,7 +13,7 @@ namespace OOP_SD_Final_Project
         /// <summary>
         /// Constructor
         /// </summary>
-        /// /// <remarks>Assigns itself the role of "Client".</remarks>
+        /// /// <remarks>Assigns object the role of "Client".</remarks>
         /// <param name="currentDate"></param>
         public Client(DateTime currentDate)
         {
@@ -21,6 +21,9 @@ namespace OOP_SD_Final_Project
             this.Role = "Client";
         }
 
+        /// <summary>
+        /// Date the user created their account.
+        /// </summary>
         private DateTime SignUpDate { get; }
 
         private void BuyTicket()

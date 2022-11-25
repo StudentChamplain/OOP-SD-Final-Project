@@ -11,7 +11,7 @@ namespace OOP_SD_Final_Project
         /// <summary>
         /// Constructor.
         /// </summary>
-        /// <remarks>Assigns itself the role of "Manager".</remarks>
+        /// <remarks>Assigns object the role of "Manager".</remarks>
         public Manager() 
         {
             this.Role = "Manager";
