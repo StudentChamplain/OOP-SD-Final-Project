@@ -18,5 +18,10 @@ namespace OOP_SD_Final_Project
         }
 
         private DateTime SignUpDate { get; }
+
+        private void BuyTicket()
+        {
+            // TODO
+        }
     }
 }
