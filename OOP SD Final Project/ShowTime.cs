@@ -13,6 +13,9 @@ namespace OOP_SD_Final_Project
         private Room room;
         private List<Ticket> ticketList;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public ShowTime()
         {
 

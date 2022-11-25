@@ -34,7 +34,7 @@ namespace OOP_SD_Final_Project
 
         private string Email { get { return email; } set { email = value; } }
         private string Password { get { return password; } set { password = value; } }
-        private string Role { get { return role; } set { role = value; } }
+        public string Role { get { return role; } set { role = value; } }
 
     }
 }

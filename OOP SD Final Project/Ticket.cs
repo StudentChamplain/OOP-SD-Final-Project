@@ -11,6 +11,9 @@ namespace OOP_SD_Final_Project
         private int ticketId;
         private ShowTime showTime;
 
+        /// <summary>
+        /// Constructor.
+        /// </summary>
         public Ticket()
         {
 
