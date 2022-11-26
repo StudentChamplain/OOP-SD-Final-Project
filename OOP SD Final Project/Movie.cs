@@ -25,6 +25,11 @@ namespace OOP_SD_Final_Project
             Genre = genre;
             Minutes = minutes;
         }
+        
+        
+        /// <summary>
+        /// The unique ID associated with the Movie.
+        /// </summary>
 
         public string MovieId { get { return movieId; } }
 

@@ -23,18 +23,43 @@ namespace OOP_SD_Final_Project
 
         }
 
+        /// <summary>
+        /// The unique ID associated with the User.
+        /// </summary>
         private int UserId { get { return userId; } set { userId = value; } }
+        
+        /// <summary>
+        /// The user's first name.
+        /// </summary>
         public string FirstName { get { return firstName; } set { firstName = value; } }
+
+        /// <summary>
+        /// The user's last name.
+        /// </summary>
         private string LastName { get { return lastName; } set { lastName = value; } }
 
+        /// <summary>
+        /// The user's full name.
+        /// </summary>
         private string FullName
         {
             get { return FirstName + " " + LastName; }
         }
 
+        /// <summary>
+        /// The user's email address.
+        /// </summary>
         private string Email { get { return email; } set { email = value; } }
+
+        /// <summary>
+        /// The user's account password.
+        /// </summary>
         private string Password { get { return password; } set { password = value; } }
-        private string Role { get { return role; } set { role = value; } }
+
+        /// <summary>
+        /// Indicates if the user is a Client or a Manager.
+        /// </summary>
+        public string Role { get { return role; } set { role = value; } }
 
     }
 }
