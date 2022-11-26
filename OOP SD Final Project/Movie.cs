@@ -8,11 +8,11 @@ namespace OOP_SD_Final_Project
 {
     internal class Movie
     {
-        private string movieId;
+        private int movieId;
         private string title;
         private string genre;
         private string minutes;
-        
+
         /// <summary>
         /// Constructor
         /// </summary>
@@ -25,18 +25,25 @@ namespace OOP_SD_Final_Project
             Genre = genre;
             Minutes = minutes;
         }
-        
-        
+
         /// <summary>
         /// The unique ID associated with the Movie.
         /// </summary>
+        public int MovieId { get { return movieId; } }
 
-        public string MovieId { get { return movieId; } }
-
+        /// <summary>
+        /// The title of the movie.
+        /// </summary>
         public string Title { get { return title; } set { title = value; } }
 
+        /// <summary>
+        /// The movie's genre.
+        /// </summary>
         public string Genre { get { return genre; } set { genre = value; } }
 
+        /// <summary>
+        /// The length of the movie in minutes.
+        /// </summary>
         public string Minutes { get { return minutes; } set { minutes = value; } }
     }
 }
