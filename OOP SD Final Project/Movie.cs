@@ -26,7 +26,7 @@ namespace OOP_SD_Final_Project
             Minutes = minutes;
         }
 
-        public int MovieId { get { return movieId; } }
+        public string MovieId { get { return movieId; } }
 
         public string Title { get { return title; } set { title = value; } }
 
