@@ -67,6 +67,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Movie.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Screen1Form.cs">
@@ -99,6 +100,19 @@
     <Compile Include="Screen2Form.Designer.cs">
       <DependentUpon>Screen2Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screen3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen3Form.Designer.cs">
+      <DependentUpon>Screen3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen3_1Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen3_1Form.Designer.cs">
+      <DependentUpon>Screen3_1Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -122,6 +136,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen2Form.resx">
       <DependentUpon>Screen2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen3Form.resx">
+      <DependentUpon>Screen3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen3_1Form.resx">
+      <DependentUpon>Screen3_1Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
