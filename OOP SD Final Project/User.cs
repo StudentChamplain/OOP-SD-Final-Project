@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_SD_Final_Project
 {
-    internal class User
+    public class User
     {
         private int userId;
         private string firstName;
@@ -23,10 +23,17 @@ namespace OOP_SD_Final_Project
 
         }
 
+        public User(int userId, string firstName, string lastName)
+        {
+            UserId = userId;
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
         /// <summary>
         /// The unique ID associated with the User.
         /// </summary>
-        private int UserId { get { return userId; } set { userId = value; } }
+        public int UserId { get { return userId; } set { userId = value; } }
         
         /// <summary>
         /// The user's first name.
@@ -41,7 +48,7 @@ namespace OOP_SD_Final_Project
         /// <summary>
         /// The user's full name.
         /// </summary>
-        private string FullName
+        public string FullName
         {
             get { return FirstName + " " + LastName; }
         }
