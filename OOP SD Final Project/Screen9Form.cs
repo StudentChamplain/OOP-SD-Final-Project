@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
-    public partial class Form1 : Form
+    public partial class Screen9Form : Form
     {
-        public Form1()
+        public Screen9Form()
         {
             InitializeComponent();
         }
+
+        
     }
 }

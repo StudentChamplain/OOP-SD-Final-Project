@@ -16,5 +16,16 @@ namespace OOP_Design_Project
         {
             InitializeComponent();
         }
+
+        private void signUpConfirmationButton_Click(object sender, EventArgs e)
+        {
+            Screen1_2Form form = new Screen1_2Form();
+            form.ShowDialog();
+        }
+
+        private void goBackButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
