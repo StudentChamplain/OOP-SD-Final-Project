@@ -16,7 +16,7 @@ namespace OOP_Design_Project
         public Screen2Form(User currentUser)
         {
             InitializeComponent();
-            SetUserInfo(currentUser.UserId.ToString(), currentUser.FullName);
+            SetUserInfo(currentUser.StringifyId(), currentUser.FullName);
         }
 
         public void SetUserInfo(string Id, string name)

@@ -68,5 +68,11 @@ namespace OOP_SD_Final_Project
         /// </summary>
         public string Role { get { return role; } set { role = value; } }
 
+        public string StringifyId()
+        {
+            string userIdString = UserId.ToString().PadLeft(6, '0');
+
+            return userIdString;
+        }
     }
 }

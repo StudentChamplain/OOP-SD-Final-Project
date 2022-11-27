@@ -24,7 +24,7 @@ namespace OOP_SD_Final_Project
         /// <returns></returns>
         private User CreateTestUser()
         {
-            User user = new User(100100, "Bob", "MacDonald");
+            User user = new User(000111, "Bob", "MacDonald");
 
             return user;
         }
