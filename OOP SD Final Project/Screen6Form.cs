@@ -29,8 +29,9 @@ namespace OOP_SD_Final_Project
         {
             this.Hide();
 
-            Screen1Form form1 = new Screen1Form();
-            form1.Show();
+            Screen2Form form2 = new Screen2Form();
+            form2.Show();
+
 
         }
     }

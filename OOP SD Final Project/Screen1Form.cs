@@ -31,8 +31,6 @@ namespace OOP_SD_Final_Project
             
 
 
-
-
             Screen1_1Form form1_1 = new Screen1_1Form();
 
             form1_1.Show();

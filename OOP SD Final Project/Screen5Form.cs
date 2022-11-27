@@ -27,9 +27,9 @@ namespace OOP_SD_Final_Project
         protected override void OnFormClosing(System.Windows.Forms.FormClosingEventArgs e)
         {
             this.Hide();
+            Screen2Form form2 = new Screen2Form();
+            form2.Show();
 
-            Screen1Form form1 = new Screen1Form();
-            form1.Show();
 
         }
 
