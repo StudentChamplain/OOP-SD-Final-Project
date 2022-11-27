@@ -31,9 +31,9 @@ namespace OOP_SD_Final_Project
 
         private void testButton_Click(object sender, EventArgs e)
         {
-            User testUser = CreateTestUser();
+            User.ActiveUser = CreateTestUser();
 
-            Screen2Form screen2Test = new Screen2Form(testUser);
+            Screen2Form screen2Test = new Screen2Form();
             screen2Test.ShowDialog();
         }
     }

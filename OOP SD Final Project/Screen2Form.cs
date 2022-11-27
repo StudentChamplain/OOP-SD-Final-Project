@@ -13,16 +13,16 @@ namespace OOP_Design_Project
 {
     public partial class Screen2Form : Form
     {
-        public Screen2Form(User currentUser)
+        public Screen2Form()
         {
             InitializeComponent();
-            SetUserInfo(currentUser.StringifyId(), currentUser.FullName);
+            SetUserInfo(User.ActiveUser);
         }
 
-        public void SetUserInfo(string Id, string name)
+        public void SetUserInfo(User currentUser)
         {
-            this.idNumberLabel.Text = Id.ToString();
-            this.userNameLabel.Text = name;
+            this.idNumberLabel.Text = currentUser.StringifyId();
+            this.userNameLabel.Text = currentUser.FullName;
         }
 
     }

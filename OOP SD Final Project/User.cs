@@ -15,6 +15,8 @@ namespace OOP_SD_Final_Project
         private string password;
         private string role;
 
+        private static User activeUser;
+
         /// <summary>
         /// Constructor.
         /// </summary>
@@ -67,6 +69,11 @@ namespace OOP_SD_Final_Project
         /// Indicates if the user is a Client or a Manager.
         /// </summary>
         public string Role { get { return role; } set { role = value; } }
+
+        /// <summary>
+        /// Contains the information of the user currently logged into the application.
+        /// </summary>
+        public static User ActiveUser { get { return activeUser; } set { activeUser = value; } }
 
         public string StringifyId()
         {
