@@ -62,23 +62,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Manager.cs" />
-    <Compile Include="Movie.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Room.cs" />
     <Compile Include="Screen1Form.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screen1Form.Designer.cs">
       <DependentUpon>Screen1Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Manager.cs" />
+    <Compile Include="Movie.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Room.cs" />
     <Compile Include="Screen1_1Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +97,42 @@
     <Compile Include="Screen2Form.Designer.cs">
       <DependentUpon>Screen2Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screen4Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen4Form.Designer.cs">
+      <DependentUpon>Screen4Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen5Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen5Form.Designer.cs">
+      <DependentUpon>Screen5Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen6Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen6Form.Designer.cs">
+      <DependentUpon>Screen6Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen7Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen7Form.Designer.cs">
+      <DependentUpon>Screen7Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen8Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen8Form.Designer.cs">
+      <DependentUpon>Screen8Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screen9Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screen9Form.Designer.cs">
+      <DependentUpon>Screen9Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="ShowTime.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="User.cs" />
@@ -118,6 +148,9 @@
     <Compile Include="Screen3_1Form.Designer.cs">
       <DependentUpon>Screen3_1Form.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Screen1Form.resx">
+      <DependentUpon>Screen1Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -127,9 +160,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Screen1Form.resx">
-      <DependentUpon>Screen1Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screen1_1Form.resx">
       <DependentUpon>Screen1_1Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +171,27 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen2Form.resx">
       <DependentUpon>Screen2Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen3_1Form.resx">
+      <DependentUpon>Screen3_1Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen4Form.resx">
+      <DependentUpon>Screen4Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen5Form.resx">
+      <DependentUpon>Screen5Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen6Form.resx">
+      <DependentUpon>Screen6Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen7Form.resx">
+      <DependentUpon>Screen7Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen8Form.resx">
+      <DependentUpon>Screen8Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screen9Form.resx">
+      <DependentUpon>Screen9Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

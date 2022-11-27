@@ -136,7 +136,7 @@ namespace OOP_Design_Project
             this.Controls.Add(this.consultRoomsButton);
             this.Controls.Add(this.consultMoviesButton);
             this.Name = "Screen2Form";
-            this.Text = "Screen2Form";
+            this.Text = "Manager Main Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 
