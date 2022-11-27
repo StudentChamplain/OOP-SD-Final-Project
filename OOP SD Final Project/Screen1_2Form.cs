@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OOP_SD_Final_Project;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,33 @@ namespace OOP_Design_Project
         {
             InitializeComponent();
         }
+
+        private void logInButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Screen7Form form7 = new Screen7Form();
+            form7.Show();
+
+
+        }
+
+        private void goBackButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            this.Close();
+        }
+
+        protected override void OnFormClosing(System.Windows.Forms.FormClosingEventArgs e)
+        {
+            this.Hide();
+
+            Screen7Form form7 = new Screen7Form();
+            form7.Show();
+
+        }
+
+
+
     }
 }

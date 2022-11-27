@@ -172,6 +172,9 @@
     <EmbeddedResource Include="Screen2Form.resx">
       <DependentUpon>Screen2Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screen3Form.resx">
+      <DependentUpon>Screen3Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screen3_1Form.resx">
       <DependentUpon>Screen3_1Form.cs</DependentUpon>
     </EmbeddedResource>

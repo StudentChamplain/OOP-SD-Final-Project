@@ -53,6 +53,7 @@
             this.mainMenuButton.TabIndex = 23;
             this.mainMenuButton.Text = "Back";
             this.mainMenuButton.UseVisualStyleBackColor = true;
+            this.mainMenuButton.Click += new System.EventHandler(this.mainMenuButton_Click);
             // 
             // companyNameLabel
             // 

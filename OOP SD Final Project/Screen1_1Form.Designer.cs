@@ -154,6 +154,7 @@ namespace OOP_Design_Project
             this.Controls.Add(this.signUpConfirmationButton);
             this.Name = "Screen1_1Form";
             this.Text = "Sign up";
+           // this.Load += new System.EventHandler(this.Screen1_1Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

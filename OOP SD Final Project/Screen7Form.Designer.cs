@@ -44,6 +44,7 @@
             this.logOutButton.TabIndex = 23;
             this.logOutButton.Text = "Log Out";
             this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
             // companyNameLabel
             // 
@@ -88,6 +89,7 @@
             this.screeningsButton.TabIndex = 18;
             this.screeningsButton.Text = "Consult Screenings";
             this.screeningsButton.UseVisualStyleBackColor = true;
+            this.screeningsButton.Click += new System.EventHandler(this.screeningsButton_Click);
             // 
             // Screen7Form
             // 

@@ -20,16 +20,28 @@ namespace OOP_SD_Final_Project
 
         private void logInButton_Click(object sender, EventArgs e)
         {
-            Screen1_1Form form = new Screen1_1Form();
-            form.ShowDialog();
+            Screen1_3Form form1_3 = new Screen1_3Form();
+            form1_3.Show();
+            this.Hide();
+
         }
 
         private void signUpButton_Click(object sender, EventArgs e)
         {
-            Screen1_3Form form = new Screen1_3Form();
-            form.ShowDialog();
+            
 
 
+
+
+            Screen1_1Form form1_1 = new Screen1_1Form();
+
+            form1_1.Show();
+            this.Hide();
+
+        }
+        protected override void OnFormClosing(System.Windows.Forms.FormClosingEventArgs e)
+        {
+            base.OnFormClosing(e);
         }
     }
 }

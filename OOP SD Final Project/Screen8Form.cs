@@ -16,5 +16,12 @@ namespace OOP_SD_Final_Project
         {
             InitializeComponent();
         }
+
+        private void mainMenuButton_Click(object sender, EventArgs e)
+        {
+            Screen7Form form7 = new Screen7Form();
+            form7.Show();
+            this.Hide();
+        }
     }
 }
