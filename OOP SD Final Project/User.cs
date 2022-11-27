@@ -75,6 +75,10 @@ namespace OOP_SD_Final_Project
         /// </summary>
         public static User ActiveUser { get { return activeUser; } set { activeUser = value; } }
 
+        /// <summary>
+        /// Returns the <see cref="UserId"/> as a string.
+        /// </summary>
+        /// <returns>A 6-character string representing the <see cref="UserId"/>.</returns>
         public string StringifyId()
         {
             string userIdString = UserId.ToString().PadLeft(6, '0');
