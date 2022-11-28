@@ -45,100 +45,102 @@ namespace OOP_Design_Project
             // 
             // signUpConfirmationButton
             // 
-            this.signUpConfirmationButton.Location = new System.Drawing.Point(216, 357);
+            this.signUpConfirmationButton.Location = new System.Drawing.Point(185, 309);
             this.signUpConfirmationButton.Name = "signUpConfirmationButton";
-            this.signUpConfirmationButton.Size = new System.Drawing.Size(132, 59);
+            this.signUpConfirmationButton.Size = new System.Drawing.Size(113, 51);
             this.signUpConfirmationButton.TabIndex = 0;
             this.signUpConfirmationButton.Text = "Confirm sign-up";
             this.signUpConfirmationButton.UseVisualStyleBackColor = true;
+            this.signUpConfirmationButton.Click += new System.EventHandler(this.signUpConfirmationButton_Click);
             // 
             // firstNameLabel
             // 
             this.firstNameLabel.AutoSize = true;
-            this.firstNameLabel.Location = new System.Drawing.Point(222, 60);
+            this.firstNameLabel.Location = new System.Drawing.Point(190, 52);
             this.firstNameLabel.Name = "firstNameLabel";
-            this.firstNameLabel.Size = new System.Drawing.Size(67, 15);
+            this.firstNameLabel.Size = new System.Drawing.Size(60, 13);
             this.firstNameLabel.TabIndex = 1;
             this.firstNameLabel.Text = "First Name:";
             // 
             // passwordLabel
             // 
             this.passwordLabel.AutoSize = true;
-            this.passwordLabel.Location = new System.Drawing.Point(222, 189);
+            this.passwordLabel.Location = new System.Drawing.Point(190, 164);
             this.passwordLabel.Name = "passwordLabel";
-            this.passwordLabel.Size = new System.Drawing.Size(60, 15);
+            this.passwordLabel.Size = new System.Drawing.Size(56, 13);
             this.passwordLabel.TabIndex = 2;
             this.passwordLabel.Text = "Password:";
             // 
             // emailLabel
             // 
             this.emailLabel.AutoSize = true;
-            this.emailLabel.Location = new System.Drawing.Point(222, 144);
+            this.emailLabel.Location = new System.Drawing.Point(190, 125);
             this.emailLabel.Name = "emailLabel";
-            this.emailLabel.Size = new System.Drawing.Size(39, 15);
+            this.emailLabel.Size = new System.Drawing.Size(35, 13);
             this.emailLabel.TabIndex = 3;
             this.emailLabel.Text = "Email:";
             // 
             // instructionsLabel
             // 
             this.instructionsLabel.AutoSize = true;
-            this.instructionsLabel.Location = new System.Drawing.Point(344, 24);
+            this.instructionsLabel.Location = new System.Drawing.Point(295, 21);
             this.instructionsLabel.Name = "instructionsLabel";
-            this.instructionsLabel.Size = new System.Drawing.Size(127, 15);
+            this.instructionsLabel.Size = new System.Drawing.Size(109, 13);
             this.instructionsLabel.TabIndex = 4;
             this.instructionsLabel.Text = "Enter your information";
             // 
             // lastNameLabel
             // 
             this.lastNameLabel.AutoSize = true;
-            this.lastNameLabel.Location = new System.Drawing.Point(222, 101);
+            this.lastNameLabel.Location = new System.Drawing.Point(190, 88);
             this.lastNameLabel.Name = "lastNameLabel";
-            this.lastNameLabel.Size = new System.Drawing.Size(66, 15);
+            this.lastNameLabel.Size = new System.Drawing.Size(61, 13);
             this.lastNameLabel.TabIndex = 5;
             this.lastNameLabel.Text = "Last Name:";
             // 
             // firstNameTextBox
             // 
-            this.firstNameTextBox.Location = new System.Drawing.Point(344, 57);
+            this.firstNameTextBox.Location = new System.Drawing.Point(295, 49);
             this.firstNameTextBox.Name = "firstNameTextBox";
-            this.firstNameTextBox.Size = new System.Drawing.Size(157, 23);
+            this.firstNameTextBox.Size = new System.Drawing.Size(135, 20);
             this.firstNameTextBox.TabIndex = 6;
             // 
             // lastNameTextBox
             // 
-            this.lastNameTextBox.Location = new System.Drawing.Point(344, 102);
+            this.lastNameTextBox.Location = new System.Drawing.Point(295, 88);
             this.lastNameTextBox.Name = "lastNameTextBox";
-            this.lastNameTextBox.Size = new System.Drawing.Size(157, 23);
+            this.lastNameTextBox.Size = new System.Drawing.Size(135, 20);
             this.lastNameTextBox.TabIndex = 7;
             // 
             // emailTextBox
             // 
-            this.emailTextBox.Location = new System.Drawing.Point(344, 141);
+            this.emailTextBox.Location = new System.Drawing.Point(295, 122);
             this.emailTextBox.Name = "emailTextBox";
-            this.emailTextBox.Size = new System.Drawing.Size(157, 23);
+            this.emailTextBox.Size = new System.Drawing.Size(135, 20);
             this.emailTextBox.TabIndex = 8;
             // 
             // passwordTextBox
             // 
-            this.passwordTextBox.Location = new System.Drawing.Point(344, 181);
+            this.passwordTextBox.Location = new System.Drawing.Point(295, 157);
             this.passwordTextBox.Name = "passwordTextBox";
-            this.passwordTextBox.Size = new System.Drawing.Size(157, 23);
+            this.passwordTextBox.Size = new System.Drawing.Size(135, 20);
             this.passwordTextBox.TabIndex = 9;
             // 
             // goBackButton
             // 
-            this.goBackButton.Location = new System.Drawing.Point(414, 357);
+            this.goBackButton.Location = new System.Drawing.Point(355, 309);
             this.goBackButton.Name = "goBackButton";
-            this.goBackButton.Size = new System.Drawing.Size(132, 59);
+            this.goBackButton.Size = new System.Drawing.Size(113, 51);
             this.goBackButton.TabIndex = 10;
             this.goBackButton.Text = "Go Back to Main Menu";
             this.goBackButton.UseVisualStyleBackColor = true;
+            this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
             // Screen1_1Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(686, 390);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.emailTextBox);
@@ -152,6 +154,7 @@ namespace OOP_Design_Project
             this.Controls.Add(this.signUpConfirmationButton);
             this.Name = "Screen1_1Form";
             this.Text = "Sign up";
+           // this.Load += new System.EventHandler(this.Screen1_1Form_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

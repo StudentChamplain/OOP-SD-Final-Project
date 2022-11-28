@@ -16,7 +16,7 @@ namespace OOP_SD_Final_Project
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Screen1Form());
         }
     }
 }

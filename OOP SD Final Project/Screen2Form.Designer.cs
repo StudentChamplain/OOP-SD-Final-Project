@@ -49,6 +49,7 @@ namespace OOP_Design_Project
             this.consultMoviesButton.TabIndex = 0;
             this.consultMoviesButton.Text = "Movies";
             this.consultMoviesButton.UseVisualStyleBackColor = true;
+            this.consultMoviesButton.Click += new System.EventHandler(this.consultMoviesButton_Click);
             // 
             // consultRoomsButton
             // 
@@ -58,6 +59,7 @@ namespace OOP_Design_Project
             this.consultRoomsButton.TabIndex = 1;
             this.consultRoomsButton.Text = "Screening Rooms";
             this.consultRoomsButton.UseVisualStyleBackColor = true;
+            this.consultRoomsButton.Click += new System.EventHandler(this.consultRoomsButton_Click);
             // 
             // consultScreeningsButton
             // 
@@ -67,6 +69,7 @@ namespace OOP_Design_Project
             this.consultScreeningsButton.TabIndex = 2;
             this.consultScreeningsButton.Text = "Screenings";
             this.consultScreeningsButton.UseVisualStyleBackColor = true;
+            this.consultScreeningsButton.Click += new System.EventHandler(this.consultScreeningsButton_Click);
             // 
             // logOffButton
             // 
@@ -76,6 +79,7 @@ namespace OOP_Design_Project
             this.logOffButton.TabIndex = 3;
             this.logOffButton.Text = "Log Out";
             this.logOffButton.UseVisualStyleBackColor = true;
+            this.logOffButton.Click += new System.EventHandler(this.logOffButton_Click);
             // 
             // consultClientsButton
             // 
@@ -85,6 +89,7 @@ namespace OOP_Design_Project
             this.consultClientsButton.TabIndex = 4;
             this.consultClientsButton.Text = "Clients";
             this.consultClientsButton.UseVisualStyleBackColor = true;
+            this.consultClientsButton.Click += new System.EventHandler(this.consultClientsButton_Click);
             // 
             // companyNameLabel
             // 
@@ -136,7 +141,7 @@ namespace OOP_Design_Project
             this.Controls.Add(this.consultRoomsButton);
             this.Controls.Add(this.consultMoviesButton);
             this.Name = "Screen2Form";
-            this.Text = "Screen2Form";
+            this.Text = "Manager Main Menu";
             this.ResumeLayout(false);
             this.PerformLayout();
 

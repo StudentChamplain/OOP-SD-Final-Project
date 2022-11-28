@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
-    public partial class Screen3Form : Form
+    public partial class Screen6Form : Form
     {
         /// <summary>
         /// 
-        /// Form Constructor which loads components of Screen3Form.
+        /// Form Constructor which loads components of Screen6Form.
         /// </summary>
-        public Screen3Form()
+        public Screen6Form()
         {
             InitializeComponent();
         }
@@ -29,7 +29,7 @@ namespace OOP_SD_Final_Project
         /// <param name="e"></param>
         private void mainMenuButton_Click(object sender, EventArgs e)
         {
-            Screen2Form form2= new Screen2Form();
+            Screen2Form form2 = new Screen2Form();
             form2.Show();
             this.Hide();
         }
@@ -44,6 +44,7 @@ namespace OOP_SD_Final_Project
 
             Screen2Form form2 = new Screen2Form();
             form2.Show();
+
 
         }
     }

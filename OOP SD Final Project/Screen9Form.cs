@@ -1,5 +1,4 @@
-﻿using OOP_Design_Project;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,39 +10,36 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
-    public partial class Screen3Form : Form
+    public partial class Screen9Form : Form
     {
-        /// <summary>
-        /// 
-        /// Form Constructor which loads components of Screen3Form.
-        /// </summary>
-        public Screen3Form()
+        public Screen9Form()
         {
             InitializeComponent();
         }
-
         /// <summary>
-        /// Button which leads User to Form 2 (Manager Main Menu)
+        /// Button which leads User to Form 8 (List Of Screenings)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void mainMenuButton_Click(object sender, EventArgs e)
         {
-            Screen2Form form2= new Screen2Form();
-            form2.Show();
             this.Hide();
+
+            Screen7Form form7 = new Screen7Form();
+            form7.Show();
         }
 
+
         /// <summary>
-        /// Function which overrides the closing button  and leads the user back to Screen2Form (Manager Main Menu). 
+        /// Function which overrides the closing button  and leads the user back to Screen7Form (Main menu). 
         ///  </summary>
         /// <param name="e"></param>
         protected override void OnFormClosing(System.Windows.Forms.FormClosingEventArgs e)
         {
             this.Hide();
 
-            Screen2Form form2 = new Screen2Form();
-            form2.Show();
+            Screen7Form form7 = new Screen7Form();
+            form7.Show();
 
         }
     }

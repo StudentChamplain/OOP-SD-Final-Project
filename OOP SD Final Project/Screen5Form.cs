@@ -11,17 +11,17 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
-    public partial class Screen3Form : Form
+    public partial class Screen5Form : Form
     {
+        
         /// <summary>
-        /// 
-        /// Form Constructor which loads components of Screen3Form.
-        /// </summary>
-        public Screen3Form()
+     /// 
+     /// Form Constructor which loads components of Screen5Form.
+     /// </summary>
+        public Screen5Form()
         {
             InitializeComponent();
         }
-
         /// <summary>
         /// Button which leads User to Form 2 (Manager Main Menu)
         /// </summary>
@@ -29,7 +29,7 @@ namespace OOP_SD_Final_Project
         /// <param name="e"></param>
         private void mainMenuButton_Click(object sender, EventArgs e)
         {
-            Screen2Form form2= new Screen2Form();
+            Screen2Form form2 = new Screen2Form();
             form2.Show();
             this.Hide();
         }
@@ -41,10 +41,11 @@ namespace OOP_SD_Final_Project
         protected override void OnFormClosing(System.Windows.Forms.FormClosingEventArgs e)
         {
             this.Hide();
-
             Screen2Form form2 = new Screen2Form();
             form2.Show();
 
+
         }
+
     }
 }
