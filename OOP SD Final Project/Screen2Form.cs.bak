@@ -1,5 +1,9 @@
+<<<<<<< HEAD
+﻿using OOP_SD_Final_Project;
+=======
 ﻿using ExtensionMethods;
 using OOP_SD_Final_Project;
+>>>>>>> Show_User_Info_on_Forms
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,12 +19,13 @@ namespace OOP_Design_Project
     public partial class Screen2Form : Form
     {
         /// <summary>
+        /// 
         /// Form Constructor which loads components of Screen2Form.
         /// </summary>
         public Screen2Form()
         {
             InitializeComponent();
-            this.SetUserInfo(idNumberLabel, userNameLabel);     // To be added on all forms viewed while logged in. 
+            this.SetUserInfo(idNumberLabel, userNameLabel);
         }
 
         /// <summary>

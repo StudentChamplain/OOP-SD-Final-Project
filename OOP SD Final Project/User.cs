@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_SD_Final_Project
 {
-    internal class User
+    public class User
     {
         private int userId;
         private string firstName;
@@ -14,6 +14,8 @@ namespace OOP_SD_Final_Project
         private string email;
         private string password;
         private string role;
+
+        private static User activeUser;
 
         /// <summary>
         /// Constructor.
@@ -23,10 +25,17 @@ namespace OOP_SD_Final_Project
 
         }
 
+        public User(int userId, string firstName, string lastName)
+        {
+            UserId = userId;
+            FirstName = firstName;
+            LastName = lastName;
+        }
+
         /// <summary>
         /// The unique ID associated with the User.
         /// </summary>
-        private int UserId { get { return userId; } set { userId = value; } }
+        public int UserId { get { return userId; } set { userId = value; } }
         
         /// <summary>
         /// The user's first name.
@@ -41,7 +50,7 @@ namespace OOP_SD_Final_Project
         /// <summary>
         /// The user's full name.
         /// </summary>
-        private string FullName
+        public string FullName
         {
             get { return FirstName + " " + LastName; }
         }
@@ -61,5 +70,20 @@ namespace OOP_SD_Final_Project
         /// </summary>
         public string Role { get { return role; } set { role = value; } }
 
+        /// <summary>
+        /// Contains the information of the user currently logged into the application.
+        /// </summary>
+        public static User ActiveUser { get { return activeUser; } set { activeUser = value; } }
+
+        /// <summary>
+        /// Returns the <see cref="UserId"/> as a string.
+        /// </summary>
+        /// <returns>A 6-character string representing the <see cref="UserId"/>.</returns>
+        public string StringifyId()
+        {
+            string userIdString = UserId.ToString().PadLeft(6, '0');
+
+            return userIdString;
+        }
     }
 }

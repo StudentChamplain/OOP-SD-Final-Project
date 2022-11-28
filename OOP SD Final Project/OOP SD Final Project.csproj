@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="Extensions.cs" />
     <Compile Include="Screen1Form.cs">
       <SubType>Form</SubType>
     </Compile>
