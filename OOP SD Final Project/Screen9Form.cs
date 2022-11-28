@@ -16,7 +16,31 @@ namespace OOP_SD_Final_Project
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// Button which leads User to Form 8 (List Of Screenings)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void mainMenuButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
 
-        
+            Screen7Form form7 = new Screen7Form();
+            form7.Show();
+        }
+
+
+        /// <summary>
+        /// Function which overrides the closing button  and leads the user back to Screen7Form (Main menu). 
+        ///  </summary>
+        /// <param name="e"></param>
+        protected override void OnFormClosing(System.Windows.Forms.FormClosingEventArgs e)
+        {
+            this.Hide();
+
+            Screen7Form form7 = new Screen7Form();
+            form7.Show();
+
+        }
     }
 }

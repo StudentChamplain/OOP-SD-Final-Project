@@ -59,27 +59,29 @@
             // logInButton
             // 
             this.logInButton.Location = new System.Drawing.Point(172, 200);
-            this.logInButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.logInButton.Margin = new System.Windows.Forms.Padding(2);
             this.logInButton.Name = "logInButton";
             this.logInButton.Size = new System.Drawing.Size(86, 37);
             this.logInButton.TabIndex = 2;
             this.logInButton.Text = "Log in";
             this.logInButton.UseVisualStyleBackColor = true;
+            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
             // 
             // backButton
             // 
             this.backButton.Location = new System.Drawing.Point(314, 200);
-            this.backButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.backButton.Margin = new System.Windows.Forms.Padding(2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(86, 37);
             this.backButton.TabIndex = 3;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // emailTextBox
             // 
             this.emailTextBox.Location = new System.Drawing.Point(239, 104);
-            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.emailTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(113, 20);
             this.emailTextBox.TabIndex = 4;
@@ -87,7 +89,7 @@
             // passwordTextBox
             // 
             this.passwordTextBox.Location = new System.Drawing.Point(239, 129);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(113, 20);
             this.passwordTextBox.TabIndex = 5;
@@ -103,7 +105,7 @@
             this.Controls.Add(this.logInButton);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.emailLabel);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Screen1_3Form";
             this.Text = "Log-in Information";
             this.ResumeLayout(false);
