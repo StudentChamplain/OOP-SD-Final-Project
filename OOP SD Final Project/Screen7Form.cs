@@ -1,4 +1,5 @@
-﻿using OOP_Design_Project;
+﻿using ExtensionMethods;
+using OOP_Design_Project;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace OOP_SD_Final_Project
         public Screen7Form()
         {
             InitializeComponent();
+            this.SetUserInfo(idNumberLabel, userNameLabel);
         }
         /// <summary>
         /// Button which leads Client to Form8 (Screenings List) 

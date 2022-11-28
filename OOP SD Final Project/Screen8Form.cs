@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExtensionMethods;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,13 +12,14 @@ using System.Windows.Forms;
 namespace OOP_SD_Final_Project
 {
     public partial class Screen8Form : Form
-    {/// <summary>
-     /// 
-     /// Form Constructor which loads components of Screen8Form.
-     /// </summary>
+    {
+        /// <summary>
+        /// Form Constructor which loads components of Screen8Form.
+        /// </summary>
         public Screen8Form()
         {
             InitializeComponent();
+            this.SetUserInfo(idNumberLabel, userNameLabel);
         }
         /// <summary>
         /// Button which leads Client back to Form 7 (Sign-up Confirmation)
