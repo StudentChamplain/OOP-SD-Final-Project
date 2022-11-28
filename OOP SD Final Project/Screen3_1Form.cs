@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExtensionMethods;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace OOP_SD_Final_Project
         public Screen3_1Form()
         {
             InitializeComponent();
+            this.SetUserInfo(idNumberLabel, userNameLabel);
         }
     }
 }

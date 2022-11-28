@@ -20,6 +20,7 @@ namespace OOP_SD_Final_Project
         public Screen1_3Form()
         {
             InitializeComponent();
+            MakeActiveUser();       // Temporary until users are integrated.
         }
 
         /// <summary>
@@ -75,6 +76,15 @@ namespace OOP_SD_Final_Project
 
         }
 
+        /// <summary>
+        /// A method to assign an example of an active user.
+        /// </summary>
+        /// <remarks>Temporary. Will be removed when user log-in is integrated.</remarks>
+        private void MakeActiveUser()
+        {
+            User newUser = new User(000111, "Alex", "Kidd");
 
+            User.ActiveUser = newUser;
+        }
     }
 }

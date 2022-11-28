@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExtensionMethods;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +16,9 @@ namespace OOP_SD_Final_Project
         public Screen9Form()
         {
             InitializeComponent();
+            this.SetUserInfo(idNumberLabel, userNameLabel);
         }
+
         /// <summary>
         /// Button which leads User to Form 8 (List Of Screenings)
         /// </summary>
