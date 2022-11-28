@@ -13,14 +13,23 @@ namespace OOP_SD_Final_Project
 {
     public partial class Screen1_3Form : Form
     {
+        /// <summary>
+        /// 
+        /// Form Constructor which loads components of Screen1_3Form.
+        /// </summary>
         public Screen1_3Form()
         {
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Button which leads User to Form 7 (Client Main Menu) or Form 2 (Manager Main Menu) 
+         /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void logInButton_Click(object sender, EventArgs e)
         {
-
+            // if User holds a Client User.Role 
             if( false/*USER IS PART OF THE CLIENTS*/)
             {
                 this.Hide();
@@ -28,7 +37,8 @@ namespace OOP_SD_Final_Project
                 Screen7Form form7 = new Screen7Form();
                 form7.Show();
             }
-            else if(true /*USER IS PART OF THE MANAGERS*/)
+            // if User holds a Manager User.Role 
+            else if (true /*USER IS PART OF THE MANAGERS*/)
             {
                 this.Hide();
                 Screen2Form form2 = new Screen2Form();
@@ -39,13 +49,22 @@ namespace OOP_SD_Final_Project
 
 
         }
-
+        /// <summary>
+        /// Button which hides and closes the form.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Hide();
             this.Close();
 
         }
+
+        /// <summary>
+        /// Function which overrides the closing button and the this.Close() function from before, and leads the user back to Screen1Form (Main menu). 
+        ///  </summary>
+        /// <param name="e"></param>
 
         protected override void OnFormClosing(System.Windows.Forms.FormClosingEventArgs e)
         {
