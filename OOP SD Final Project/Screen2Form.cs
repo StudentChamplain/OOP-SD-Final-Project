@@ -1,4 +1,5 @@
-﻿using OOP_SD_Final_Project;
+﻿using ExtensionMethods;
+using OOP_SD_Final_Project;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace OOP_Design_Project
         public Screen2Form()
         {
             InitializeComponent();
+            this.SetUserInfo(idNumberLabel, userNameLabel);
         }
 
         /// <summary>
