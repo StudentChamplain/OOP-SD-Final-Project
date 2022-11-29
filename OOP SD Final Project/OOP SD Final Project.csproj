@@ -63,6 +63,11 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Project_DatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Project_DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Screen1Form.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +202,17 @@
     <EmbeddedResource Include="Screen9Form.resx">
       <DependentUpon>Screen9Form.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="Project_DatabaseDataSet.xsc">
+      <DependentUpon>Project_DatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Project_DatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Project_DatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Project_DatabaseDataSet.xss">
+      <DependentUpon>Project_DatabaseDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
