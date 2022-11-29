@@ -49,5 +49,19 @@ namespace OOP_SD_Final_Project
 
         }
 
+        private void roomBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.roomBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
+
+        }
+
+        private void Screen5Form_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.Room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.project_DatabaseDataSet.Room);
+
+        }
     }
 }
