@@ -48,5 +48,20 @@ namespace OOP_SD_Final_Project
 
 
         }
+
+        private void showTimeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.showTimeBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
+
+        }
+
+        private void Screen4Form_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.ShowTime' table. You can move, or remove it, as needed.
+            this.showTimeTableAdapter.Fill(this.project_DatabaseDataSet.ShowTime);
+
+        }
     }
 }

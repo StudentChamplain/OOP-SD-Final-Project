@@ -48,5 +48,20 @@ namespace OOP_SD_Final_Project
             form2.Show();
 
         }
+
+        private void movieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.movieBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
+
+        }
+
+        private void Screen3Form_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.Movie' table. You can move, or remove it, as needed.
+            this.movieTableAdapter.Fill(this.project_DatabaseDataSet.Movie);
+
+        }
     }
 }
