@@ -33,5 +33,27 @@ namespace OOP_SD_Final_Project.Properties {
                 return ((string)(this["Project_DatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\xyz\\ProjectDatabase.mdf;In" +
+            "tegrated Security=True;Connect Timeout=30")]
+        public string ProjectDatabaseConnectionString {
+            get {
+                return ((string)(this["ProjectDatabaseConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=\"C:\\xyz\\Project Database.mdf\"" +
+            ";Integrated Security=True;Connect Timeout=30")]
+        public string Project_DatabaseConnectionString1 {
+            get {
+                return ((string)(this["Project_DatabaseConnectionString1"]));
+            }
+        }
     }
 }

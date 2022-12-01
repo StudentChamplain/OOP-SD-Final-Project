@@ -31,7 +31,7 @@ namespace OOP_SD_Final_Project
         private void logInButton_Click(object sender, EventArgs e)
         {
 
-            this.userTableAdapter.GetDataBy1(emailTextBox.Text, passwordTextBox.Text);
+           // this.userTableAdapter.GetDataBy1(emailTextBox.Text, passwordTextBox.Text);
             // if User holds a Client User.Role 
             if( false/*USER IS PART OF THE CLIENTS*/)
             {

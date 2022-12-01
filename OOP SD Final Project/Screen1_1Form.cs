@@ -45,8 +45,7 @@ VALUES        (@Email,@FirstName,@LastName,@Password,@SignUpDateTime,@Role);
         {
             DateTime now = DateTime.Now;
 
-           this.userTableAdapter.InsertClient(emailTextBox.Text, firstNameTextBox.Text, 
-               lastNameTextBox.Text, passwordTextBox.Text, now, "Client");
+           
 
             //Client newCLient = new Client();
 

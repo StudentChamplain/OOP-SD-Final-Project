@@ -63,9 +63,6 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="Extensions.cs" />
-    <Compile Include="Project_DatabaseDataSet.cs">
-      <DependentUpon>Project_DatabaseDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Project_DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -240,15 +237,6 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Project Database.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Project Database_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>Project Database.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -2784,7 +2784,7 @@ SELECT MovieId, Title, Genre, Minutes FROM Movie WHERE (MovieId = @MovieId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString;
+            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3136,7 +3136,7 @@ SELECT MovieId, Title, Genre, Minutes FROM Movie WHERE (MovieId = @MovieId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString;
+            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3475,7 +3475,7 @@ SELECT ShowTimeId, RoomId, MovieId, StartTime, TicketsSold FROM ShowTime WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString;
+            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3790,7 +3790,7 @@ SELECT TicketId, UserId, ShowTimeId FROM Ticket WHERE (TicketId = @TicketId)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString;
+            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4117,7 +4117,7 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString;
+            this._connection.ConnectionString = global::OOP_SD_Final_Project.Properties.Settings.Default.Project_DatabaseConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
