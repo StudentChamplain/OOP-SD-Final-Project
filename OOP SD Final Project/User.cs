@@ -32,6 +32,16 @@ namespace OOP_SD_Final_Project
             LastName = lastName;
         }
 
+
+        public User(int userId, string firstName, string lastName, string email, string password)
+        {
+            UserId = userId;
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            Password = password;
+        }
+
         /// <summary>
         /// The unique ID associated with the User.
         /// </summary>

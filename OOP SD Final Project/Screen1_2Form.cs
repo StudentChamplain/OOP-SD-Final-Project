@@ -42,7 +42,9 @@ namespace OOP_Design_Project
         private void goBackButton_Click(object sender, EventArgs e)
         {
             this.Hide();
-            this.Close();
+
+            Screen1Form form1 = new Screen1Form();
+            form1.Show();
         }
 
         /// <summary>
@@ -53,8 +55,8 @@ namespace OOP_Design_Project
         {
             this.Hide();
 
-            Screen7Form form7 = new Screen7Form();
-            form7.Show();
+            Screen1Form form1 = new Screen1Form();
+            form1.Show();
 
         }
 

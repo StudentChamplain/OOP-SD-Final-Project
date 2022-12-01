@@ -28,12 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.emailLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.logInButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.project_DatabaseDataSet = new OOP_SD_Final_Project.Project_DatabaseDataSet();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.UserTableAdapter();
+            this.tableAdapterManager = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // emailLabel
@@ -94,11 +101,35 @@
             this.passwordTextBox.Size = new System.Drawing.Size(113, 20);
             this.passwordTextBox.TabIndex = 5;
             // 
+            // project_DatabaseDataSet
+            // 
+            this.project_DatabaseDataSet.DataSetName = "Project_DatabaseDataSet";
+            this.project_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.project_DatabaseDataSet;
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.MovieTableAdapter = null;
+            this.tableAdapterManager.RoomTableAdapter = null;
+            this.tableAdapterManager.ShowTimeTableAdapter = null;
+            this.tableAdapterManager.TicketTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UserTableAdapter = this.userTableAdapter;
+            // 
             // Screen1_3Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(781, 366);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.emailTextBox);
             this.Controls.Add(this.backButton);
@@ -108,6 +139,9 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Screen1_3Form";
             this.Text = "Log-in Information";
+            this.Load += new System.EventHandler(this.Screen1_3Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +155,9 @@
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.TextBox emailTextBox;
         private System.Windows.Forms.TextBox passwordTextBox;
+        private Project_DatabaseDataSet project_DatabaseDataSet;
+        private System.Windows.Forms.BindingSource userBindingSource;
+        private Project_DatabaseDataSetTableAdapters.UserTableAdapter userTableAdapter;
+        private Project_DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

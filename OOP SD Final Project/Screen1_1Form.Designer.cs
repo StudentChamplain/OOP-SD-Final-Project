@@ -30,6 +30,7 @@ namespace OOP_Design_Project
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.signUpConfirmationButton = new System.Windows.Forms.Button();
             this.firstNameLabel = new System.Windows.Forms.Label();
             this.passwordLabel = new System.Windows.Forms.Label();
@@ -41,6 +42,12 @@ namespace OOP_Design_Project
             this.emailTextBox = new System.Windows.Forms.TextBox();
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.goBackButton = new System.Windows.Forms.Button();
+            this.project_DatabaseDataSet = new OOP_SD_Final_Project.Project_DatabaseDataSet();
+            this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userTableAdapter = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.UserTableAdapter();
+            this.tableAdapterManager = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager();
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // signUpConfirmationButton
@@ -136,11 +143,35 @@ namespace OOP_Design_Project
             this.goBackButton.UseVisualStyleBackColor = true;
             this.goBackButton.Click += new System.EventHandler(this.goBackButton_Click);
             // 
+            // project_DatabaseDataSet
+            // 
+            this.project_DatabaseDataSet.DataSetName = "Project_DatabaseDataSet";
+            this.project_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userBindingSource
+            // 
+            this.userBindingSource.DataMember = "User";
+            this.userBindingSource.DataSource = this.project_DatabaseDataSet;
+            // 
+            // userTableAdapter
+            // 
+            this.userTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.MovieTableAdapter = null;
+            this.tableAdapterManager.RoomTableAdapter = null;
+            this.tableAdapterManager.ShowTimeTableAdapter = null;
+            this.tableAdapterManager.TicketTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UserTableAdapter = this.userTableAdapter;
+            // 
             // Screen1_1Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 390);
+            this.ClientSize = new System.Drawing.Size(845, 398);
             this.Controls.Add(this.goBackButton);
             this.Controls.Add(this.passwordTextBox);
             this.Controls.Add(this.emailTextBox);
@@ -154,7 +185,9 @@ namespace OOP_Design_Project
             this.Controls.Add(this.signUpConfirmationButton);
             this.Name = "Screen1_1Form";
             this.Text = "Sign up";
-           // this.Load += new System.EventHandler(this.Screen1_1Form_Load);
+            this.Load += new System.EventHandler(this.Screen1_1Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -173,5 +206,9 @@ namespace OOP_Design_Project
         private TextBox emailTextBox;
         private TextBox passwordTextBox;
         private Button goBackButton;
+        private OOP_SD_Final_Project.Project_DatabaseDataSet project_DatabaseDataSet;
+        private BindingSource userBindingSource;
+        private OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.UserTableAdapter userTableAdapter;
+        private OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
     }
 }

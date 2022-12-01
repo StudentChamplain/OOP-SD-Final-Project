@@ -30,6 +30,8 @@ namespace OOP_SD_Final_Project
         /// <param name="e"></param>
         private void logInButton_Click(object sender, EventArgs e)
         {
+
+            this.userTableAdapter.GetDataBy1(emailTextBox.Text, passwordTextBox.Text);
             // if User holds a Client User.Role 
             if( false/*USER IS PART OF THE CLIENTS*/)
             {
@@ -85,6 +87,21 @@ namespace OOP_SD_Final_Project
             User newUser = new User(000111, "Alex", "Kidd");
 
             User.ActiveUser = newUser;
+        }
+
+        private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.userBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
+
+        }
+
+        private void Screen1_3Form_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.project_DatabaseDataSet.User);
+
         }
     }
 }

@@ -13,6 +13,20 @@ namespace OOP_Design_Project
 {
     public partial class Screen1_1Form : Form
     {
+
+
+
+        /*
+         
+         INSERT INTO [User]
+                         (Email, FirstName, LastName, Password, SignUpDateTime, Role)
+VALUES        (@Email,@FirstName,@LastName,@Password,@SignUpDateTime,@Role); 
+
+         
+         
+         
+         
+         */
         /// <summary>
         /// 
         /// Form Constructor which loads components of Screen1_1Form.
@@ -29,10 +43,22 @@ namespace OOP_Design_Project
         /// <param name="e"></param>
         private void signUpConfirmationButton_Click(object sender, EventArgs e)
         {
+            DateTime now = DateTime.Now;
+
+           this.userTableAdapter.InsertClient(emailTextBox.Text, firstNameTextBox.Text, 
+               lastNameTextBox.Text, passwordTextBox.Text, now, "Client");
+
+            //Client newCLient = new Client();
+
             Screen1_2Form form1_2 = new Screen1_2Form();
             form1_2.Show();
             this.Hide();
         }
+
+        /*INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES (@Email, @FirstName, @LastName, @Password, @SignUpDateTime, @Role);
+SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [User] WHERE (UserId = SCOPE_IDENTITY())
+         * 
+         */
 
         /// <summary>
         /// Button which hides and closes the form.
@@ -57,8 +83,19 @@ namespace OOP_Design_Project
 
         }
 
+        private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.userBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
 
+        }
 
+        private void Screen1_1Form_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.project_DatabaseDataSet.User);
 
+        }
     }
 }

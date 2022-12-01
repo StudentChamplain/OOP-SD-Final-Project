@@ -63,6 +63,9 @@
   <ItemGroup>
     <Compile Include="Client.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Project_DatabaseDataSet.cs">
+      <DependentUpon>Project_DatabaseDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Project_DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
