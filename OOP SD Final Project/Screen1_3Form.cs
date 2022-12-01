@@ -3,8 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,9 +33,31 @@ namespace OOP_SD_Final_Project
         private void logInButton_Click(object sender, EventArgs e)
         {
 
-           // this.userTableAdapter.GetDataBy1(emailTextBox.Text, passwordTextBox.Text);
+            string password = passwordTextBox.Text;
+            string email = emailTextBox.Text;
+            string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
+                SqlConnection con = new SqlConnection(connstring); 
+            con.Open();
+            string query = "Select * from Users where Password= '"+ password+"' AND Email ='" + email + "'"; 
+            SqlCommand cmd = new SqlCommand(query, con);
+
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            string output;
+            while (reader.Read())
+            {
+                output = "Output = " + reader.GetValue(0);
+                MessageBox.Show(output);
+            }
+
+
+
+
+
+
+            // this.userTableAdapter.GetDataBy1(emailTextBox.Text, passwordTextBox.Text);
             // if User holds a Client User.Role 
-            if( false/*USER IS PART OF THE CLIENTS*/)
+            if ( false/*USER IS PART OF THE CLIENTS*/)
             {
                 this.Hide();
 
