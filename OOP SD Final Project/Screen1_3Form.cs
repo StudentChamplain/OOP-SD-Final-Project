@@ -27,7 +27,7 @@ namespace OOP_SD_Final_Project
 
         /// <summary>
         /// Button which leads User to Form 7 (Client Main Menu) or Form 2 (Manager Main Menu) 
-         /// </summary>
+        /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void logInButton_Click(object sender, EventArgs e)
@@ -35,29 +35,45 @@ namespace OOP_SD_Final_Project
 
             string password = passwordTextBox.Text;
             string email = emailTextBox.Text;
-            string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
-                SqlConnection con = new SqlConnection(connstring); 
+
+            //sqlClass example = new sqlClass("Select * from [User] where Password= '" + password + "' AND Email ='" + email + "'");
+
+
+            string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
+            SqlConnection con = new SqlConnection(connstring);
             con.Open();
-            string query = "Select * from Users where Password= '"+ password+"' AND Email ='" + email + "'"; 
+            string query = "Select * from [User] where Password= '" + password + "' AND Email ='" + email + "'";
             SqlCommand cmd = new SqlCommand(query, con);
 
             SqlDataReader reader = cmd.ExecuteReader();
 
             string output;
+            
+            bool verification = false;
+            //MessageBox.Show("one");
             while (reader.Read())
             {
-                output = "Output = " + reader.GetValue(0);
+                output = reader["UserId"].ToString();
+                  
                 MessageBox.Show(output);
+                verification = true; 
+
+            }
+
+            if (verification)
+            {
+                MessageBox.Show("logged in");
+
+            }
+            else
+            {
+                MessageBox.Show("wrong email");
             }
 
 
 
-
-
-
-            // this.userTableAdapter.GetDataBy1(emailTextBox.Text, passwordTextBox.Text);
-            // if User holds a Client User.Role 
-            if ( false/*USER IS PART OF THE CLIENTS*/)
+            if (false)/*USER IS PART OF THE CLIENTS*/
             {
                 this.Hide();
 
@@ -72,6 +88,11 @@ namespace OOP_SD_Final_Project
                 form2.Show();
 
             }
+
+
+
+
+
 
 
 
@@ -127,5 +148,6 @@ namespace OOP_SD_Final_Project
             this.userTableAdapter.Fill(this.project_DatabaseDataSet.User);
 
         }
+
     }
 }

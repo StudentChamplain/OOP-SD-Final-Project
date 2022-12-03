@@ -34,7 +34,6 @@
             this.idNumberLabel = new System.Windows.Forms.Label();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.userIdLabel = new System.Windows.Forms.Label();
-            this.instructionsLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // moviesLabel
@@ -91,21 +90,11 @@
             this.userIdLabel.TabIndex = 19;
             this.userIdLabel.Text = "User Id: ";
             // 
-            // instructionsLabel
-            // 
-            this.instructionsLabel.AutoSize = true;
-            this.instructionsLabel.Location = new System.Drawing.Point(253, 339);
-            this.instructionsLabel.Name = "instructionsLabel";
-            this.instructionsLabel.Size = new System.Drawing.Size(285, 13);
-            this.instructionsLabel.TabIndex = 25;
-            this.instructionsLabel.Text = "(double click on a movie to see its details and buy a ticket) ";
-            // 
             // Screen8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.instructionsLabel);
             this.Controls.Add(this.moviesLabel);
             this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.companyNameLabel);
@@ -127,6 +116,5 @@
         private System.Windows.Forms.Label idNumberLabel;
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Label userIdLabel;
-        private System.Windows.Forms.Label instructionsLabel;
     }
 }
