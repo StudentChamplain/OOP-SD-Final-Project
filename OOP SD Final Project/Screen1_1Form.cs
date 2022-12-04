@@ -1,13 +1,16 @@
 ﻿using OOP_SD_Final_Project;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace OOP_Design_Project
 {
@@ -16,11 +19,11 @@ namespace OOP_Design_Project
 
 
 
+
+
         /*
          
-         INSERT INTO [User]
-                         (Email, FirstName, LastName, Password, SignUpDateTime, Role)
-VALUES        (@Email,@FirstName,@LastName,@Password,@SignUpDateTime,@Role); 
+         INSERT INTO [User] (Email, FirstName, LastName, Password, SignUpDateTime, Role) VALUES (@Email,@FirstName,@LastName,@Password,@SignUpDateTime,@Role); 
 
          
          
@@ -43,9 +46,29 @@ VALUES        (@Email,@FirstName,@LastName,@Password,@SignUpDateTime,@Role);
         /// <param name="e"></param>
         private void signUpConfirmationButton_Click(object sender, EventArgs e)
         {
-            DateTime now = DateTime.Now;
-
            
+
+
+
+
+
+
+
+            //INSERTING THE USER INTO THE USERS TABLE
+            
+            DateTime now = DateTime.Now;
+            string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
+            SqlConnection con = new SqlConnection(connstring);
+            con.Open();
+            string query = "INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES ('" + emailTextBox.Text + "', '" + firstNameTextBox.Text + "' , '" + lastNameTextBox.Text + "' , '" + passwordTextBox.Text + "' , '" + now + "',  '" + "Client" + "')";
+            SqlCommand cmd = new SqlCommand(query, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+
+
+
 
             //Client newCLient = new Client();
 

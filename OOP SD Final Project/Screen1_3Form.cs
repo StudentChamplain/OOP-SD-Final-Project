@@ -36,8 +36,7 @@ namespace OOP_SD_Final_Project
             string password = passwordTextBox.Text;
             string email = emailTextBox.Text;
 
-            //sqlClass example = new sqlClass("Select * from [User] where Password= '" + password + "' AND Email ='" + email + "'");
-
+            
 
             string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
                 "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
@@ -49,45 +48,49 @@ namespace OOP_SD_Final_Project
             SqlDataReader reader = cmd.ExecuteReader();
 
             string output;
-            
+            string role = "";
             bool verification = false;
-            //MessageBox.Show("one");
+        
             while (reader.Read())
             {
                 output = reader["UserId"].ToString();
-                  
+                role = reader["Role"].ToString();
                 MessageBox.Show(output);
                 verification = true; 
 
             }
-
+          
+            //  VERIFY WITH NOAH HOW TO IDENTIFY IF A USER IS A MANAGER OR A CLIENT
             if (verification)
             {
                 MessageBox.Show("logged in");
 
+                if (role == "Client")/*USER IS PART OF THE CLIENTS*/
+                {
+                    this.Hide();
+
+                    Screen7Form form7 = new Screen7Form();
+                    form7.Show();
+                }
+                // if User holds a Manager User.Role 
+                else if (role == "Manager")
+                {
+                    this.Hide();
+                    Screen2Form form2 = new Screen2Form();
+                    form2.Show();
+
+                }
+
+
             }
             else
             {
-                MessageBox.Show("wrong email");
+                MessageBox.Show("wrong email or password");
             }
 
 
 
-            if (false)/*USER IS PART OF THE CLIENTS*/
-            {
-                this.Hide();
-
-                Screen7Form form7 = new Screen7Form();
-                form7.Show();
-            }
-            // if User holds a Manager User.Role 
-            else if (true /*USER IS PART OF THE MANAGERS*/)
-            {
-                this.Hide();
-                Screen2Form form2 = new Screen2Form();
-                form2.Show();
-
-            }
+            
 
 
 
