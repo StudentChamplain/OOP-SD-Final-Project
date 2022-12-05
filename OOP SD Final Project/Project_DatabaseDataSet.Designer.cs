@@ -4070,7 +4070,7 @@ SELECT TicketId, UserId, ShowTimeId FROM Ticket WHERE (TicketId = @TicketId)";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[User] WHERE (([UserId] = @Original_UserId) AND ([Email] = @Original_Email) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Password] = @Original_Password) AND ((@IsNull_SignUpDateTime = 1 AND [SignUpDateTime] IS NULL) OR ([SignUpDateTime] = @Original_SignUpDateTime)) AND ([Role] = @Original_Role))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [User] WHERE (([UserId] = @Original_UserId) AND ([Email] = @Original_Email) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Password] = @Original_Password) AND ((@IsNull_SignUpDateTime = 1 AND [SignUpDateTime] IS NULL) OR ([SignUpDateTime] = @Original_SignUpDateTime)) AND ([Role] = @Original_Role))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -4082,7 +4082,7 @@ SELECT TicketId, UserId, ShowTimeId FROM Ticket WHERE (TicketId = @TicketId)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES (@Email, @FirstName, @LastName, @Password, @SignUpDateTime, @Role);
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES (@Email, @FirstName, @LastName, @Password, @SignUpDateTime, @Role);
 SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [User] WHERE (UserId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4093,7 +4093,7 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Role", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Role", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[User] SET [Email] = @Email, [FirstName] = @FirstName, [LastName] = @LastName, [Password] = @Password, [SignUpDateTime] = @SignUpDateTime, [Role] = @Role WHERE (([UserId] = @Original_UserId) AND ([Email] = @Original_Email) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Password] = @Original_Password) AND ((@IsNull_SignUpDateTime = 1 AND [SignUpDateTime] IS NULL) OR ([SignUpDateTime] = @Original_SignUpDateTime)) AND ([Role] = @Original_Role));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [User] SET [Email] = @Email, [FirstName] = @FirstName, [LastName] = @LastName, [Password] = @Password, [SignUpDateTime] = @SignUpDateTime, [Role] = @Role WHERE (([UserId] = @Original_UserId) AND ([Email] = @Original_Email) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([Password] = @Original_Password) AND ((@IsNull_SignUpDateTime = 1 AND [SignUpDateTime] IS NULL) OR ([SignUpDateTime] = @Original_SignUpDateTime)) AND ([Role] = @Original_Role));
 SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [User] WHERE (UserId = @UserId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4126,8 +4126,8 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM db" +
-                "o.[User]";
+            this._commandCollection[0].CommandText = "SELECT        UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role\r" +
+                "\nFROM            [User]\r\nWHERE        (Role = N\'Client\')";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4142,17 +4142,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
             }
             int returnValue = this.Adapter.Fill(dataTable);
             return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual Project_DatabaseDataSet.UserDataTable GetData() {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            Project_DatabaseDataSet.UserDataTable dataTable = new Project_DatabaseDataSet.UserDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

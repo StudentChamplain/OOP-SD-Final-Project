@@ -49,5 +49,20 @@ namespace OOP_SD_Final_Project
 
 
         }
+
+        private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.userBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
+
+        }
+
+        private void Screen6Form_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
+            this.userTableAdapter.Fill(this.project_DatabaseDataSet.User);
+
+        }
     }
 }
