@@ -59,9 +59,9 @@ namespace OOP_Design_Project
                 string query = "INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES ('" + emailTextBox.Text.Trim() + "', '" + firstNameTextBox.Text + "' , '" + lastNameTextBox.Text + "' , '" + passwordTextBox.Text + "' , '" + now + "',  '" + "Client" + "')";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
-                con.Close();
 
 
+                // Get the data from the user that was created.
                 query = "Select * from [User] where Email ='" + emailTextBox.Text.Trim() + "'";
                 cmd = new SqlCommand(query, con);
                 SqlDataReader reader = cmd.ExecuteReader();
@@ -76,6 +76,7 @@ namespace OOP_Design_Project
                     firstName = reader["FirstName"].ToString();
                     lastName = reader["LastName"].ToString();
 
+                    // Set the active user to contain the relevant data.
                     User.ActiveUser = new User(userId, firstName, lastName);
                 }
 

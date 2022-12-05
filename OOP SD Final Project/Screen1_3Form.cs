@@ -63,6 +63,7 @@ namespace OOP_SD_Final_Project
                     MessageBox.Show(userId.ToString());
                     verification = true;
 
+                    // Set the active user to contain the relevant data.
                     User.ActiveUser = new User(userId, firstName, lastName);
 
                 }
