@@ -1059,6 +1059,10 @@ namespace OOP_SD_Final_Project {
             
             private global::System.Data.DataColumn columnTicketsSold;
             
+            private global::System.Data.DataColumn columnTitle;
+            
+            private global::System.Data.DataColumn columnRoomNo;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ShowTimeDataTable() {
@@ -1134,6 +1138,22 @@ namespace OOP_SD_Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn TitleColumn {
+                get {
+                    return this.columnTitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn RoomNoColumn {
+                get {
+                    return this.columnRoomNo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1169,14 +1189,16 @@ namespace OOP_SD_Final_Project {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public ShowTimeRow AddShowTimeRow(RoomRow parentRoomRowByFK_ShowTime_Room, MovieRow parentMovieRowByFK_ShowTime_Movie, System.DateTime StartTime, int TicketsSold) {
+            public ShowTimeRow AddShowTimeRow(RoomRow parentRoomRowByFK_ShowTime_Room, MovieRow parentMovieRowByFK_ShowTime_Movie, System.DateTime StartTime, int TicketsSold, string Title, string RoomNo) {
                 ShowTimeRow rowShowTimeRow = ((ShowTimeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         null,
                         StartTime,
-                        TicketsSold};
+                        TicketsSold,
+                        Title,
+                        RoomNo};
                 if ((parentRoomRowByFK_ShowTime_Room != null)) {
                     columnValuesArray[1] = parentRoomRowByFK_ShowTime_Room[0];
                 }
@@ -1217,6 +1239,8 @@ namespace OOP_SD_Final_Project {
                 this.columnMovieId = base.Columns["MovieId"];
                 this.columnStartTime = base.Columns["StartTime"];
                 this.columnTicketsSold = base.Columns["TicketsSold"];
+                this.columnTitle = base.Columns["Title"];
+                this.columnRoomNo = base.Columns["RoomNo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1232,6 +1256,10 @@ namespace OOP_SD_Final_Project {
                 base.Columns.Add(this.columnStartTime);
                 this.columnTicketsSold = new global::System.Data.DataColumn("TicketsSold", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTicketsSold);
+                this.columnTitle = new global::System.Data.DataColumn("Title", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTitle);
+                this.columnRoomNo = new global::System.Data.DataColumn("RoomNo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRoomNo);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnShowTimeId}, true));
                 this.columnShowTimeId.AutoIncrement = true;
@@ -1244,6 +1272,10 @@ namespace OOP_SD_Final_Project {
                 this.columnMovieId.AllowDBNull = false;
                 this.columnStartTime.AllowDBNull = false;
                 this.columnTicketsSold.AllowDBNull = false;
+                this.columnTitle.AllowDBNull = false;
+                this.columnTitle.MaxLength = 50;
+                this.columnRoomNo.AllowDBNull = false;
+                this.columnRoomNo.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2219,6 +2251,28 @@ namespace OOP_SD_Final_Project {
                 }
                 set {
                     this[this.tableShowTime.TicketsSoldColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Title {
+                get {
+                    return ((string)(this[this.tableShowTime.TitleColumn]));
+                }
+                set {
+                    this[this.tableShowTime.TitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string RoomNo {
+                get {
+                    return ((string)(this[this.tableShowTime.RoomNoColumn]));
+                }
+                set {
+                    this[this.tableShowTime.RoomNoColumn] = value;
                 }
             }
             
@@ -3431,44 +3485,9 @@ SELECT MovieId, Title, Genre, Minutes FROM Movie WHERE (MovieId = @MovieId)";
             tableMapping.ColumnMappings.Add("MovieId", "MovieId");
             tableMapping.ColumnMappings.Add("StartTime", "StartTime");
             tableMapping.ColumnMappings.Add("TicketsSold", "TicketsSold");
+            tableMapping.ColumnMappings.Add("Title", "Title");
+            tableMapping.ColumnMappings.Add("RoomNo", "RoomNo");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[ShowTime] WHERE (([ShowTimeId] = @Original_ShowTimeId) AND ([R" +
-                "oomId] = @Original_RoomId) AND ([MovieId] = @Original_MovieId) AND ([StartTime] " +
-                "= @Original_StartTime) AND ([TicketsSold] = @Original_TicketsSold))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShowTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShowTimeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TicketsSold", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketsSold", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[ShowTime] ([RoomId], [MovieId], [StartTime], [TicketsSold]) VA" +
-                "LUES (@RoomId, @MovieId, @StartTime, @TicketsSold);\r\nSELECT ShowTimeId, RoomId, " +
-                "MovieId, StartTime, TicketsSold FROM ShowTime WHERE (ShowTimeId = SCOPE_IDENTITY" +
-                "())";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketsSold", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketsSold", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[ShowTime] SET [RoomId] = @RoomId, [MovieId] = @MovieId, [StartTime] = @StartTime, [TicketsSold] = @TicketsSold WHERE (([ShowTimeId] = @Original_ShowTimeId) AND ([RoomId] = @Original_RoomId) AND ([MovieId] = @Original_MovieId) AND ([StartTime] = @Original_StartTime) AND ([TicketsSold] = @Original_TicketsSold));
-SELECT ShowTimeId, RoomId, MovieId, StartTime, TicketsSold FROM ShowTime WHERE (ShowTimeId = @ShowTimeId)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StartTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TicketsSold", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketsSold", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ShowTimeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ShowTimeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RoomId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "RoomId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MovieId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MovieId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StartTime", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "StartTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TicketsSold", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TicketsSold", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ShowTimeId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "ShowTimeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3484,7 +3503,10 @@ SELECT ShowTimeId, RoomId, MovieId, StartTime, TicketsSold FROM ShowTime WHERE (
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ShowTimeId, RoomId, MovieId, StartTime, TicketsSold FROM dbo.ShowTime";
+            this._commandCollection[0].CommandText = @"SELECT        ShowTime.ShowTimeId, ShowTime.RoomId, ShowTime.MovieId, ShowTime.StartTime, ShowTime.TicketsSold, Movie.Title, Room.RoomNo
+FROM            ShowTime INNER JOIN
+                         Movie ON ShowTime.MovieId = Movie.MovieId INNER JOIN
+                         Room ON ShowTime.RoomId = Room.RoomId";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3510,125 +3532,6 @@ SELECT ShowTimeId, RoomId, MovieId, StartTime, TicketsSold FROM ShowTime WHERE (
             Project_DatabaseDataSet.ShowTimeDataTable dataTable = new Project_DatabaseDataSet.ShowTimeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Project_DatabaseDataSet.ShowTimeDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(Project_DatabaseDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "ShowTime");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ShowTimeId, int Original_RoomId, int Original_MovieId, System.DateTime Original_StartTime, int Original_TicketsSold) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ShowTimeId));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_RoomId));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_MovieId));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_StartTime));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_TicketsSold));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int RoomId, int MovieId, System.DateTime StartTime, int TicketsSold) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(RoomId));
-            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(MovieId));
-            this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(StartTime));
-            this.Adapter.InsertCommand.Parameters[3].Value = ((int)(TicketsSold));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
-            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.InsertCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int RoomId, int MovieId, System.DateTime StartTime, int TicketsSold, int Original_ShowTimeId, int Original_RoomId, int Original_MovieId, System.DateTime Original_StartTime, int Original_TicketsSold, int ShowTimeId) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(RoomId));
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(MovieId));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(StartTime));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(TicketsSold));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_ShowTimeId));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_RoomId));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_MovieId));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_StartTime));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_TicketsSold));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(ShowTimeId));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int RoomId, int MovieId, System.DateTime StartTime, int TicketsSold, int Original_ShowTimeId, int Original_RoomId, int Original_MovieId, System.DateTime Original_StartTime, int Original_TicketsSold) {
-            return this.Update(RoomId, MovieId, StartTime, TicketsSold, Original_ShowTimeId, Original_RoomId, Original_MovieId, Original_StartTime, Original_TicketsSold, Original_ShowTimeId);
         }
     }
     
@@ -4412,8 +4315,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
         
         private RoomTableAdapter _roomTableAdapter;
         
-        private ShowTimeTableAdapter _showTimeTableAdapter;
-        
         private TicketTableAdapter _ticketTableAdapter;
         
         private UserTableAdapter _userTableAdapter;
@@ -4458,20 +4359,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
             }
             set {
                 this._roomTableAdapter = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public ShowTimeTableAdapter ShowTimeTableAdapter {
-            get {
-                return this._showTimeTableAdapter;
-            }
-            set {
-                this._showTimeTableAdapter = value;
             }
         }
         
@@ -4530,10 +4417,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                             && (this._roomTableAdapter.Connection != null))) {
                     return this._roomTableAdapter.Connection;
                 }
-                if (((this._showTimeTableAdapter != null) 
-                            && (this._showTimeTableAdapter.Connection != null))) {
-                    return this._showTimeTableAdapter.Connection;
-                }
                 if (((this._ticketTableAdapter != null) 
                             && (this._ticketTableAdapter.Connection != null))) {
                     return this._ticketTableAdapter.Connection;
@@ -4559,9 +4442,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                     count = (count + 1);
                 }
                 if ((this._roomTableAdapter != null)) {
-                    count = (count + 1);
-                }
-                if ((this._showTimeTableAdapter != null)) {
                     count = (count + 1);
                 }
                 if ((this._ticketTableAdapter != null)) {
@@ -4596,15 +4476,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
                     result = (result + this._roomTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
-            if ((this._showTimeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.ShowTime.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._showTimeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4652,14 +4523,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._showTimeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.ShowTime.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._showTimeTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             if ((this._userTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.User.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
@@ -4699,14 +4562,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
                     result = (result + this._userTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
-            if ((this._showTimeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.ShowTime.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._showTimeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4775,11 +4630,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._showTimeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._showTimeTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
-                        "tring.");
-            }
             if (((this._ticketTableAdapter != null) 
                         && (this.MatchTableAdapterConnection(this._ticketTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
@@ -4838,15 +4688,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                     if (this._roomTableAdapter.Adapter.AcceptChangesDuringUpdate) {
                         this._roomTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
                         adaptersWithAcceptChangesDuringUpdate.Add(this._roomTableAdapter.Adapter);
-                    }
-                }
-                if ((this._showTimeTableAdapter != null)) {
-                    revertConnections.Add(this._showTimeTableAdapter, this._showTimeTableAdapter.Connection);
-                    this._showTimeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._showTimeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._showTimeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._showTimeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._showTimeTableAdapter.Adapter);
                     }
                 }
                 if ((this._ticketTableAdapter != null)) {
@@ -4932,10 +4773,6 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
                 if ((this._roomTableAdapter != null)) {
                     this._roomTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._roomTableAdapter]));
                     this._roomTableAdapter.Transaction = null;
-                }
-                if ((this._showTimeTableAdapter != null)) {
-                    this._showTimeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._showTimeTableAdapter]));
-                    this._showTimeTableAdapter.Transaction = null;
                 }
                 if ((this._ticketTableAdapter != null)) {
                     this._ticketTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._ticketTableAdapter]));
