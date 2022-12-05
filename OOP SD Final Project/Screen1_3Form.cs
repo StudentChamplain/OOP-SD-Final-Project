@@ -32,71 +32,64 @@ namespace OOP_SD_Final_Project
         /// <param name="e"></param>
         private void logInButton_Click(object sender, EventArgs e)
         {
-
-            string password = passwordTextBox.Text;
-            string email = emailTextBox.Text;
-
-            
-
-            string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
-            SqlConnection con = new SqlConnection(connstring);
-            con.Open();
-            string query = "Select * from [User] where Password= '" + password + "' AND Email ='" + email + "'";
-            SqlCommand cmd = new SqlCommand(query, con);
-
-            SqlDataReader reader = cmd.ExecuteReader();
-
-            string output;
-            string role = "";
-            bool verification = false;
-        
-            while (reader.Read())
+            if (ValidateEmail())
             {
-                output = reader["UserId"].ToString();
-                role = reader["Role"].ToString();
-                MessageBox.Show(output);
-                verification = true; 
+                string password = passwordTextBox.Text;
+                string email = emailTextBox.Text;
 
-            }
-          
-            //  VERIFY WITH NOAH HOW TO IDENTIFY IF A USER IS A MANAGER OR A CLIENT
-            if (verification)
-            {
-                MessageBox.Show("logged in");
 
-                if (role == "Client")/*USER IS PART OF THE CLIENTS*/
+
+                string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                    "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
+                SqlConnection con = new SqlConnection(connstring);
+                con.Open();
+                string query = "Select * from [User] where Password= '" + password + "' AND Email ='" + email + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                string output;
+                string role = "";
+                bool verification = false;
+
+                while (reader.Read())
                 {
-                    this.Hide();
-
-                    Screen7Form form7 = new Screen7Form();
-                    form7.Show();
-                }
-                // if User holds a Manager User.Role 
-                else if (role == "Manager")
-                {
-                    this.Hide();
-                    Screen2Form form2 = new Screen2Form();
-                    form2.Show();
+                    output = reader["UserId"].ToString();
+                    role = reader["Role"].ToString();
+                    MessageBox.Show(output);
+                    verification = true;
 
                 }
 
+                //  VERIFY WITH NOAH HOW TO IDENTIFY IF A USER IS A MANAGER OR A CLIENT
+                if (verification)
+                {
+                    MessageBox.Show("logged in");
 
+                    if (role == "Client")/*USER IS PART OF THE CLIENTS*/
+                    {
+                        this.Hide();
+
+                        Screen7Form form7 = new Screen7Form();
+                        form7.Show();
+                    }
+                    // if User holds a Manager User.Role 
+                    else if (role == "Manager")
+                    {
+                        this.Hide();
+                        Screen2Form form2 = new Screen2Form();
+                        form2.Show();
+
+                    }
+
+
+                }
+                else
+                {
+                    MessageBox.Show("wrong email or password");
+                }
             }
-            else
-            {
-                MessageBox.Show("wrong email or password");
-            }
-
-
-
             
-
-
-
-
-
-
 
 
         }
@@ -150,6 +143,22 @@ namespace OOP_SD_Final_Project
             // TODO: This line of code loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.project_DatabaseDataSet.User);
 
+        }
+
+        private bool ValidateEmail()
+        {
+            string email = emailTextBox.Text.Trim();
+
+            if (email.Contains('@'))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid email address.");
+                
+                return false;
+            }
         }
 
     }

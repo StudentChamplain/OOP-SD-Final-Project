@@ -47,38 +47,35 @@ namespace OOP_Design_Project
         private void signUpConfirmationButton_Click(object sender, EventArgs e)
         {
            
+            if(ValidateEmail() == true)
+            {
+                //INSERTING THE USER INTO THE USERS TABLE
+
+                DateTime now = DateTime.Now;
+                string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                    "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
+                SqlConnection con = new SqlConnection(connstring);
+                con.Open();
+                string query = "INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES ('" + emailTextBox.Text + "', '" + firstNameTextBox.Text + "' , '" + lastNameTextBox.Text + "' , '" + passwordTextBox.Text + "' , '" + now + "',  '" + "Client" + "')";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
 
 
 
 
 
+                //Client newCLient = new Client();
 
+                Screen1_2Form form1_2 = new Screen1_2Form();
+                form1_2.Show();
+                this.Hide();
+            }
 
-            //INSERTING THE USER INTO THE USERS TABLE
-            
-            DateTime now = DateTime.Now;
-            string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
-            SqlConnection con = new SqlConnection(connstring);
-            con.Open();
-            string query = "INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES ('" + emailTextBox.Text + "', '" + firstNameTextBox.Text + "' , '" + lastNameTextBox.Text + "' , '" + passwordTextBox.Text + "' , '" + now + "',  '" + "Client" + "')";
-            SqlCommand cmd = new SqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-            con.Close();
-
-
-
-
-
-            //Client newCLient = new Client();
-
-            Screen1_2Form form1_2 = new Screen1_2Form();
-            form1_2.Show();
-            this.Hide();
         }
 
         /*INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES (@Email, @FirstName, @LastName, @Password, @SignUpDateTime, @Role);
-SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [User] WHERE (UserId = SCOPE_IDENTITY())
+    SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [User] WHERE (UserId = SCOPE_IDENTITY())
          * 
          */
 
@@ -118,6 +115,46 @@ SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [
             // TODO: This line of code loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
             this.userTableAdapter.Fill(this.project_DatabaseDataSet.User);
 
+        }
+
+        private bool ValidateEmail()
+        {
+            string email = emailTextBox.Text.Trim();
+            bool isValid = false;
+
+            if (email.Contains('@'))
+            {
+                string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
+                    "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
+                SqlConnection con = new SqlConnection(connstring);
+                con.Open();
+                string query = "Select * from [User] where Email ='" + email + "'";
+                SqlCommand cmd = new SqlCommand(query, con);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                bool verification = false;
+
+                while (reader.Read())
+                {
+                    verification = true;
+                }
+
+                if (verification == true)
+                {
+                    MessageBox.Show("That email is already taken.");
+                }
+                else
+                {
+                    isValid = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid email address.");
+            }
+
+            return isValid;
         }
     }
 }
