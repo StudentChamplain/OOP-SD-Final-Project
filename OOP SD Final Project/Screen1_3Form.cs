@@ -48,16 +48,22 @@ namespace OOP_SD_Final_Project
 
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                string output;
+                int userId;
+                string firstName = "";
+                string lastName = "";
                 string role = "";
                 bool verification = false;
 
                 while (reader.Read())
                 {
-                    output = reader["UserId"].ToString();
+                    userId = int.Parse(reader["UserId"].ToString());
+                    firstName = reader["FirstName"].ToString();
+                    lastName = reader["LastName"].ToString();
                     role = reader["Role"].ToString();
-                    MessageBox.Show(output);
+                    MessageBox.Show(userId.ToString());
                     verification = true;
+
+                    User.ActiveUser = new User(userId, firstName, lastName);
 
                 }
 

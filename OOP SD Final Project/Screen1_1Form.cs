@@ -56,12 +56,30 @@ namespace OOP_Design_Project
                     "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
                 SqlConnection con = new SqlConnection(connstring);
                 con.Open();
-                string query = "INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES ('" + emailTextBox.Text + "', '" + firstNameTextBox.Text + "' , '" + lastNameTextBox.Text + "' , '" + passwordTextBox.Text + "' , '" + now + "',  '" + "Client" + "')";
+                string query = "INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES ('" + emailTextBox.Text.Trim() + "', '" + firstNameTextBox.Text + "' , '" + lastNameTextBox.Text + "' , '" + passwordTextBox.Text + "' , '" + now + "',  '" + "Client" + "')";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
 
 
+                query = "Select * from [User] where Email ='" + emailTextBox.Text.Trim() + "'";
+                cmd = new SqlCommand(query, con);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                int userId;
+                string firstName = "";
+                string lastName = "";
+
+                while (reader.Read())
+                {
+                    userId = int.Parse(reader["UserId"].ToString());
+                    firstName = reader["FirstName"].ToString();
+                    lastName = reader["LastName"].ToString();
+
+                    User.ActiveUser = new User(userId, firstName, lastName);
+                }
+
+                con.Close();
 
 
 
