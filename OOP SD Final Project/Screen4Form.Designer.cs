@@ -36,11 +36,6 @@
             this.idNumberLabel = new System.Windows.Forms.Label();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.userIdLabel = new System.Windows.Forms.Label();
-            this.addScreeningButton = new System.Windows.Forms.Button();
-            this.project_DatabaseDataSet = new OOP_SD_Final_Project.Project_DatabaseDataSet();
-            this.showTimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.showTimeTableAdapter = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.ShowTimeTableAdapter();
-            this.tableAdapterManager = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager();
             this.showTimeBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -55,16 +50,22 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.showTimeBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.showTimeDataGridView = new System.Windows.Forms.DataGridView();
+            this.RoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingSource)).BeginInit();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.showTimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.project_DatabaseDataSet = new OOP_SD_Final_Project.Project_DatabaseDataSet();
+            this.showTimeTableAdapter = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.ShowTimeTableAdapter();
+            this.tableAdapterManager = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingNavigator)).BeginInit();
             this.showTimeBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showTimeDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // screeningsLabel
@@ -78,7 +79,7 @@
             // 
             // mainMenuButton
             // 
-            this.mainMenuButton.Location = new System.Drawing.Point(427, 385);
+            this.mainMenuButton.Location = new System.Drawing.Point(340, 390);
             this.mainMenuButton.Name = "mainMenuButton";
             this.mainMenuButton.Size = new System.Drawing.Size(114, 32);
             this.mainMenuButton.TabIndex = 23;
@@ -120,39 +121,6 @@
             this.userIdLabel.Size = new System.Drawing.Size(47, 13);
             this.userIdLabel.TabIndex = 19;
             this.userIdLabel.Text = "User Id: ";
-            // 
-            // addScreeningButton
-            // 
-            this.addScreeningButton.Location = new System.Drawing.Point(239, 385);
-            this.addScreeningButton.Name = "addScreeningButton";
-            this.addScreeningButton.Size = new System.Drawing.Size(114, 32);
-            this.addScreeningButton.TabIndex = 18;
-            this.addScreeningButton.Text = "Add a Screening";
-            this.addScreeningButton.UseVisualStyleBackColor = true;
-            // 
-            // project_DatabaseDataSet
-            // 
-            this.project_DatabaseDataSet.DataSetName = "Project_DatabaseDataSet";
-            this.project_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // showTimeBindingSource
-            // 
-            this.showTimeBindingSource.DataMember = "ShowTime";
-            this.showTimeBindingSource.DataSource = this.project_DatabaseDataSet;
-            // 
-            // showTimeTableAdapter
-            // 
-            this.showTimeTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.MovieTableAdapter = null;
-            this.tableAdapterManager.RoomTableAdapter = null;
-            this.tableAdapterManager.ShowTimeTableAdapter = this.showTimeTableAdapter;
-            this.tableAdapterManager.TicketTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.UserTableAdapter = null;
             // 
             // showTimeBindingNavigator
             // 
@@ -236,7 +204,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -285,15 +252,29 @@
             this.showTimeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showTimeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
+            this.RoomNo,
+            this.Title,
             this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3});
             this.showTimeDataGridView.DataSource = this.showTimeBindingSource;
-            this.showTimeDataGridView.Location = new System.Drawing.Point(71, 119);
+            this.showTimeDataGridView.Location = new System.Drawing.Point(22, 119);
             this.showTimeDataGridView.Name = "showTimeDataGridView";
-            this.showTimeDataGridView.Size = new System.Drawing.Size(543, 216);
+            this.showTimeDataGridView.Size = new System.Drawing.Size(741, 216);
             this.showTimeDataGridView.TabIndex = 25;
+            // 
+            // RoomNo
+            // 
+            this.RoomNo.DataPropertyName = "RoomNo";
+            this.RoomNo.HeaderText = "RoomNo";
+            this.RoomNo.Name = "RoomNo";
+            // 
+            // Title
+            // 
+            this.Title.DataPropertyName = "Title";
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -301,6 +282,18 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "ShowTimeId";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "StartTime";
+            this.dataGridViewTextBoxColumn4.HeaderText = "StartTime";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "TicketsSold";
+            this.dataGridViewTextBoxColumn5.HeaderText = "TicketsSold";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             // 
             // dataGridViewTextBoxColumn2
             // 
@@ -314,17 +307,29 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "MovieId";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // dataGridViewTextBoxColumn4
+            // showTimeBindingSource
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "StartTime";
-            this.dataGridViewTextBoxColumn4.HeaderText = "StartTime";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.showTimeBindingSource.DataMember = "ShowTime";
+            this.showTimeBindingSource.DataSource = this.project_DatabaseDataSet;
             // 
-            // dataGridViewTextBoxColumn5
+            // project_DatabaseDataSet
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "TicketsSold";
-            this.dataGridViewTextBoxColumn5.HeaderText = "TicketsSold";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.project_DatabaseDataSet.DataSetName = "Project_DatabaseDataSet";
+            this.project_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // showTimeTableAdapter
+            // 
+            this.showTimeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.MovieTableAdapter = null;
+            this.tableAdapterManager.RoomTableAdapter = null;
+            this.tableAdapterManager.TicketTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UserTableAdapter = null;
             // 
             // Screen4Form
             // 
@@ -339,16 +344,15 @@
             this.Controls.Add(this.idNumberLabel);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.userIdLabel);
-            this.Controls.Add(this.addScreeningButton);
             this.Name = "Screen4Form";
             this.Text = "Screenings List ";
             this.Load += new System.EventHandler(this.Screen4Form_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingNavigator)).EndInit();
             this.showTimeBindingNavigator.ResumeLayout(false);
             this.showTimeBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showTimeDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +366,6 @@
         private System.Windows.Forms.Label idNumberLabel;
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Label userIdLabel;
-        private System.Windows.Forms.Button addScreeningButton;
         private Project_DatabaseDataSet project_DatabaseDataSet;
         private System.Windows.Forms.BindingSource showTimeBindingSource;
         private Project_DatabaseDataSetTableAdapters.ShowTimeTableAdapter showTimeTableAdapter;
@@ -382,9 +385,11 @@
         private System.Windows.Forms.ToolStripButton showTimeBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView showTimeDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

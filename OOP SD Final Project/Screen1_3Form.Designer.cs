@@ -121,7 +121,7 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.MovieTableAdapter = null;
             this.tableAdapterManager.RoomTableAdapter = null;
-            this.tableAdapterManager.ShowTimeTableAdapter = null;
+           // this.tableAdapterManager.ShowTimeTableAdapter = null;
             this.tableAdapterManager.TicketTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.UserTableAdapter = this.userTableAdapter;

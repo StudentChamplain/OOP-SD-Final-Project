@@ -28,12 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.moviesLabel = new System.Windows.Forms.Label();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.companyNameLabel = new System.Windows.Forms.Label();
             this.idNumberLabel = new System.Windows.Forms.Label();
             this.userNameLabel = new System.Windows.Forms.Label();
             this.userIdLabel = new System.Windows.Forms.Label();
+            this.project_DatabaseDataSet = new OOP_SD_Final_Project.Project_DatabaseDataSet();
+            this.showTimeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.showTimeTableAdapter = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.ShowTimeTableAdapter();
+            this.tableAdapterManager = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager();
+            this.showTimeDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showTimeDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // moviesLabel
@@ -90,11 +102,68 @@
             this.userIdLabel.TabIndex = 19;
             this.userIdLabel.Text = "User Id: ";
             // 
+            // project_DatabaseDataSet
+            // 
+            this.project_DatabaseDataSet.DataSetName = "Project_DatabaseDataSet";
+            this.project_DatabaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // showTimeBindingSource
+            // 
+            this.showTimeBindingSource.DataMember = "ShowTime";
+            this.showTimeBindingSource.DataSource = this.project_DatabaseDataSet;
+            // 
+            // showTimeTableAdapter
+            // 
+            this.showTimeTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Connection = null;
+            this.tableAdapterManager.MovieTableAdapter = null;
+            this.tableAdapterManager.RoomTableAdapter = null;
+            this.tableAdapterManager.TicketTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UserTableAdapter = null;
+            // 
+            // showTimeDataGridView
+            // 
+            this.showTimeDataGridView.AutoGenerateColumns = false;
+            this.showTimeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showTimeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn4});
+            this.showTimeDataGridView.DataSource = this.showTimeBindingSource;
+            this.showTimeDataGridView.Location = new System.Drawing.Point(138, 133);
+            this.showTimeDataGridView.Name = "showTimeDataGridView";
+            this.showTimeDataGridView.Size = new System.Drawing.Size(545, 220);
+            this.showTimeDataGridView.TabIndex = 25;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Title";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Title";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "RoomNo";
+            this.dataGridViewTextBoxColumn7.HeaderText = "RoomNo";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "StartTime";
+            this.dataGridViewTextBoxColumn4.HeaderText = "StartTime";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
             // Screen8Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.showTimeDataGridView);
             this.Controls.Add(this.moviesLabel);
             this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.companyNameLabel);
@@ -103,6 +172,10 @@
             this.Controls.Add(this.userIdLabel);
             this.Name = "Screen8Form";
             this.Text = "Future Screenings";
+            this.Load += new System.EventHandler(this.Screen8Form_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showTimeDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +189,13 @@
         private System.Windows.Forms.Label idNumberLabel;
         private System.Windows.Forms.Label userNameLabel;
         private System.Windows.Forms.Label userIdLabel;
+        private Project_DatabaseDataSet project_DatabaseDataSet;
+        private System.Windows.Forms.BindingSource showTimeBindingSource;
+        private Project_DatabaseDataSetTableAdapters.ShowTimeTableAdapter showTimeTableAdapter;
+        private Project_DatabaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.DataGridView showTimeDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
     }
 }
