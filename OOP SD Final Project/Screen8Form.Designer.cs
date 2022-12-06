@@ -40,9 +40,9 @@
             this.showTimeTableAdapter = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.ShowTimeTableAdapter();
             this.tableAdapterManager = new OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager();
             this.showTimeDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Title = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RoomNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showTimeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showTimeDataGridView)).BeginInit();
@@ -128,8 +128,10 @@
             this.tableAdapterManager.Connection = null;
             this.tableAdapterManager.MovieTableAdapter = null;
             this.tableAdapterManager.RoomTableAdapter = null;
+            this.tableAdapterManager.ShowTimeTableAdapter = null;
             this.tableAdapterManager.TicketTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsersTableAdapter = null;
             this.tableAdapterManager.UserTableAdapter = null;
             // 
             // showTimeDataGridView
@@ -137,13 +139,18 @@
             this.showTimeDataGridView.AutoGenerateColumns = false;
             this.showTimeDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.showTimeDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn4});
+            this.dataGridViewTextBoxColumn4,
+            this.Title,
+            this.RoomNo});
             this.showTimeDataGridView.DataSource = this.showTimeBindingSource;
             this.showTimeDataGridView.Location = new System.Drawing.Point(184, 164);
             this.showTimeDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.showTimeDataGridView.Name = "showTimeDataGridView";
+<<<<<<< HEAD
+            this.showTimeDataGridView.Size = new System.Drawing.Size(390, 220);
+            this.showTimeDataGridView.TabIndex = 25;
+            // 
+=======
             this.showTimeDataGridView.ReadOnly = true;
             this.showTimeDataGridView.RowHeadersWidth = 51;
             this.showTimeDataGridView.Size = new System.Drawing.Size(727, 271);
@@ -167,6 +174,7 @@
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
             this.dataGridViewTextBoxColumn7.Width = 125;
             // 
+>>>>>>> fe5cb493835665f38c2cc08e9c9770e7e6ba0d68
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "StartTime";
@@ -175,6 +183,18 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             this.dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // Title
+            // 
+            this.Title.DataPropertyName = "Title";
+            this.Title.HeaderText = "Title";
+            this.Title.Name = "Title";
+            // 
+            // RoomNo
+            // 
+            this.RoomNo.DataPropertyName = "RoomNo";
+            this.RoomNo.HeaderText = "RoomNo";
+            this.RoomNo.Name = "RoomNo";
             // 
             // Screen8Form
             // 
@@ -216,5 +236,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Title;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RoomNo;
     }
 }

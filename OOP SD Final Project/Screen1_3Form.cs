@@ -60,7 +60,7 @@ namespace OOP_SD_Final_Project
                     firstName = reader["FirstName"].ToString();
                     lastName = reader["LastName"].ToString();
                     role = reader["Role"].ToString();
-                   // MessageBox.Show(userId.ToString());
+                  //  MessageBox.Show(userId.ToString());
                     verification = true;
 
                     // Set the active user to contain the relevant data.

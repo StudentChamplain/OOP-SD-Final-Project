@@ -133,12 +133,6 @@
     <Compile Include="Screen8Form.Designer.cs">
       <DependentUpon>Screen8Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screen9Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen9Form.Designer.cs">
-      <DependentUpon>Screen9Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="ShowTime.cs" />
     <Compile Include="Ticket.cs" />
     <Compile Include="User.cs" />
@@ -147,12 +141,6 @@
     </Compile>
     <Compile Include="Screen3Form.Designer.cs">
       <DependentUpon>Screen3Form.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screen3_1Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screen3_1Form.Designer.cs">
-      <DependentUpon>Screen3_1Form.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Screen1Form.resx">
       <DependentUpon>Screen1Form.cs</DependentUpon>
@@ -181,9 +169,6 @@
     <EmbeddedResource Include="Screen3Form.resx">
       <DependentUpon>Screen3Form.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screen3_1Form.resx">
-      <DependentUpon>Screen3_1Form.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screen4Form.resx">
       <DependentUpon>Screen4Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,9 +183,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screen8Form.resx">
       <DependentUpon>Screen8Form.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screen9Form.resx">
-      <DependentUpon>Screen9Form.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Project_DatabaseDataSet.xsc">
       <DependentUpon>Project_DatabaseDataSet.xsd</DependentUpon>
