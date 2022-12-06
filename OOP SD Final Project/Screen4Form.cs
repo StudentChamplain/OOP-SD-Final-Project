@@ -59,8 +59,22 @@ namespace OOP_SD_Final_Project
 
         private void Screen4Form_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.Room' table. You can move, or remove it, as needed.
+            this.roomTableAdapter.Fill(this.project_DatabaseDataSet.Room);
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.Movie' table. You can move, or remove it, as needed.
+            this.movieTableAdapter.Fill(this.project_DatabaseDataSet.Movie);
             // TODO: This line of code loads data into the 'project_DatabaseDataSet.ShowTime' table. You can move, or remove it, as needed.
             this.showTimeTableAdapter.Fill(this.project_DatabaseDataSet.ShowTime);
+            // TODO: This line of code loads data into the 'project_DatabaseDataSet.ShowTime' table. You can move, or remove it, as needed.
+            this.showTimeTableAdapter.Fill(this.project_DatabaseDataSet.ShowTime);
+
+        }
+
+        private void showTimeBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.showTimeBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
 
         }
     }
