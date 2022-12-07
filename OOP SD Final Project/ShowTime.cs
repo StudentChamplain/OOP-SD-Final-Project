@@ -10,7 +10,6 @@ namespace OOP_SD_Final_Project
     {
         private int showTimeId;
         private Movie movie;
-        private Room room;
         private List<Ticket> ticketList;
 
         /// <summary>
@@ -34,20 +33,9 @@ namespace OOP_SD_Final_Project
         /// <summary>
         /// The Room the Showtime will be held in.
         /// </summary>
-        public Room Room { get { return room; } set { room = value; } }
 
         /// <summary>
         /// Return the remaining amount of available seats for the Showtime. 
         /// </summary>
-        public int SeatsLeft
-        {
-            get
-            {
-                int maxSeats = room.MaxSeats;
-                int ticketsSold = ticketList.Count;
-
-                return maxSeats - ticketsSold;
-            }
-        }
     }
 }
