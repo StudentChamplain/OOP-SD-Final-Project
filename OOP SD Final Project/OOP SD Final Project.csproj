@@ -133,8 +133,6 @@
     <Compile Include="Screen8Form.Designer.cs">
       <DependentUpon>Screen8Form.cs</DependentUpon>
     </Compile>
-    <Compile Include="ShowTime.cs" />
-    <Compile Include="Ticket.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Screen3Form.cs">
       <SubType>Form</SubType>

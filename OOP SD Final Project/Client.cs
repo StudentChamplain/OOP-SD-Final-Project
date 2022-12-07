@@ -9,7 +9,6 @@ namespace OOP_SD_Final_Project
 {
     internal class Client : User
     {
-        private List<Ticket> ticketList;
 
 
         /// <summary>
