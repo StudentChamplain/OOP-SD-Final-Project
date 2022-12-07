@@ -8,6 +8,9 @@ using System.Windows.Forms;
 
 namespace ExtensionMethods
 {
+    /// <summary>
+    /// Class to contain extension methods.
+    /// </summary>
     static class Extensions
     {
         /// <summary>

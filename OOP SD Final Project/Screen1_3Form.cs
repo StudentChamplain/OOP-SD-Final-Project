@@ -22,17 +22,16 @@ namespace OOP_SD_Final_Project
         public Screen1_3Form()
         {
             InitializeComponent();
-            MakeActiveUser();       // Temporary until users are integrated.
         }
 
         /// <summary>
-        /// When clicking on the button the program will connect to the database and verify the user email and the password were not already taken. If they are not taken the program will add the values to the table USers and direct the User either to Client Section of the Program or the Manager Section 
+        /// When clicking on the button the program will connect to the database and verify the user email and the password were not already taken. If they are not taken the program will add the values to the table Users and direct the User either to Client Section of the Program or the Manager Section. 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void logInButton_Click(object sender, EventArgs e)
         {
-            //email Validation
+            //Email Validation
             if (ValidateEmail())
             {
                 string password = passwordTextBox.Text;
@@ -41,7 +40,7 @@ namespace OOP_SD_Final_Project
 
 
                
-                //link to SQL Connection 
+                //Link to SQL Connection 
                 SqlConnection con = DBConnection.getInstance();
                 
 
@@ -69,20 +68,18 @@ namespace OOP_SD_Final_Project
                     User.ActiveUser = new User(userId, firstName, lastName);
 
                 }
-
-               
                 if (verification)
                 {
-                    
 
-                    if (role == "Client")/*USER IS PART OF THE CLIENTS*/
+                    // If the User is a Client
+                    if (role == "Client")
                     {
                         this.Hide();
 
                         Screen7Form form7 = new Screen7Form();
                         form7.Show();
                     }
-                    // if User holds a Manager User.Role 
+                    // If the User is a Manager
                     else if (role == "Manager")
                     {
                         this.Hide();
@@ -90,7 +87,6 @@ namespace OOP_SD_Final_Project
                         form2.Show();
 
                     }
-
 
                 }
                 else
@@ -131,17 +127,7 @@ namespace OOP_SD_Final_Project
         }
 
         /// <summary>
-        /// A method to assign an example of an active user.
-        /// </summary>
-        /// <remarks>Temporary. Will be removed when user log-in is integrated.</remarks>
-        private void MakeActiveUser()
-        {
-            User newUser = new User(000111, "Alex", "Kidd");
-
-            User.ActiveUser = newUser;
-        }
-        /// <summary>
-        /// this Methodd will save the changes done to the database when clickin on the save button
+        /// This method will save the changes done to the database when clicking on the save button.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -165,7 +151,7 @@ namespace OOP_SD_Final_Project
         }
 
         /// <summary>
-        /// this method will validate if the email has a "@" symbol and if so it will return a true statement.
+        /// This method will validate if the email has a "@" symbol and if so it will return a true statement.
         /// </summary>
         /// <returns>bool </returns>
         private bool ValidateEmail()
