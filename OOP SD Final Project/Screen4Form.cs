@@ -48,7 +48,11 @@ namespace OOP_SD_Final_Project
 
 
         }
-
+        /// <summary>
+        /// This button saves the values to the database when clicked 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void showTimeBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -57,6 +61,11 @@ namespace OOP_SD_Final_Project
 
         }
 
+        /// <summary>
+        ///  Loads data into the different tables
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Screen4Form_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'project_DatabaseDataSet.Room' table. You can move, or remove it, as needed.
@@ -70,6 +79,11 @@ namespace OOP_SD_Final_Project
 
         }
 
+        /// <summary>
+        /// This button saves the values to the database when clicked 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void showTimeBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
         {
             this.Validate();
