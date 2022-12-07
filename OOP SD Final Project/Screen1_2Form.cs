@@ -32,7 +32,6 @@ namespace OOP_Design_Project
             Screen7Form form7 = new Screen7Form();
             form7.Show();
 
-
         }
         /// <summary>
         /// Button which hides and closes the form.

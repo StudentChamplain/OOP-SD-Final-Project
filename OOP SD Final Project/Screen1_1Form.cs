@@ -16,12 +16,7 @@ namespace OOP_Design_Project
 {
     public partial class Screen1_1Form : Form
     {
-
-
-         
-        
         /// <summary>
-        /// 
         /// Form Constructor which loads components of Screen1_1Form.
         /// </summary>
         public Screen1_1Form()
@@ -40,7 +35,6 @@ namespace OOP_Design_Project
             if(ValidateEmail() == true)
             {
                 
-
                 DateTime now = DateTime.Now;
 
                 SqlConnection con = DBConnection.getInstance();
