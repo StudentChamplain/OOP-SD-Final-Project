@@ -12,6 +12,7 @@ namespace OOP_SD_Final_Project
         private string title;
         private string genre;
         private string minutes;
+        public static List<string[]> movieTicketsList = new List<string[]>();
 
         /// <summary>
         /// Constructor
