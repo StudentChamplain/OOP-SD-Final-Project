@@ -45,7 +45,11 @@ namespace OOP_SD_Final_Project
             form7.Show();
 
         }
-
+        /// <summary>
+        /// loads data into the 'project_DatabaseDataSet.ShowTime' table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Screen8Form_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'project_DatabaseDataSet.ShowTime' table. You can move, or remove it, as needed.

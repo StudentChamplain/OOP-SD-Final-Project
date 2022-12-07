@@ -48,7 +48,11 @@ namespace OOP_SD_Final_Project
 
 
         }
-
+        /// <summary>
+        /// This button will be saving the changes done to the datagrid view to the database 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void roomBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -56,10 +60,14 @@ namespace OOP_SD_Final_Project
             this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
 
         }
-
+        /// <summary>
+        /// loads data into the 'project_DatabaseDataSet.Room' table.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Screen5Form_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'project_DatabaseDataSet.Room' table. You can move, or remove it, as needed.
+            // TODO: This line of code  You can move, or remove it, as needed.
             this.roomTableAdapter.Fill(this.project_DatabaseDataSet.Room);
 
         }

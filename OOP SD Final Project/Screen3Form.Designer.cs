@@ -281,7 +281,7 @@
             this.movieDataGridView.DataSource = this.movieBindingSource;
             this.movieDataGridView.Location = new System.Drawing.Point(131, 142);
             this.movieDataGridView.Name = "movieDataGridView";
-            this.movieDataGridView.Size = new System.Drawing.Size(454, 209);
+            this.movieDataGridView.Size = new System.Drawing.Size(466, 209);
             this.movieDataGridView.TabIndex = 18;
             // 
             // dataGridViewTextBoxColumn1
