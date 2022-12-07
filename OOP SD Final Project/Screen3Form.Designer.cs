@@ -58,7 +58,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.movieTicketsListBox = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.project_DatabaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.movieBindingNavigator)).BeginInit();
@@ -327,22 +327,22 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.Width = 125;
             // 
-            // listBox1
+            // movieTicketsListBox
             // 
-            this.listBox1.Cursor = System.Windows.Forms.Cursors.PanNW;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(757, 164);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(283, 260);
-            this.listBox1.TabIndex = 19;
+            this.movieTicketsListBox.Cursor = System.Windows.Forms.Cursors.PanNW;
+            this.movieTicketsListBox.FormattingEnabled = true;
+            this.movieTicketsListBox.ItemHeight = 16;
+            this.movieTicketsListBox.Location = new System.Drawing.Point(757, 164);
+            this.movieTicketsListBox.Name = "movieTicketsListBox";
+            this.movieTicketsListBox.Size = new System.Drawing.Size(283, 260);
+            this.movieTicketsListBox.TabIndex = 19;
             // 
             // Screen3Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.movieTicketsListBox);
             this.Controls.Add(this.movieDataGridView);
             this.Controls.Add(this.movieBindingNavigator);
             this.Controls.Add(this.moviesLabel);
@@ -396,6 +396,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox movieTicketsListBox;
     }
 }

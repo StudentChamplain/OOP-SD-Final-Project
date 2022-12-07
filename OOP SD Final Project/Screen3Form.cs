@@ -73,11 +73,8 @@ namespace OOP_SD_Final_Project
             this.movieTableAdapter.Fill(this.project_DatabaseDataSet.Movie);
 
 
-
-            string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                    "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
-            SqlConnection con = new SqlConnection(connstring);
-            con.Open();
+            // Gets the tickets sold by movie using a query on the database.
+            SqlConnection con = DBConnection.getInstance();
             string query = "select m.MovieId,\r\n\tm.Title,\r\n\tm.Genre,\r\n\tm.Minutes,\r\n\tSUM(s.TicketsSold) TicketsSold\r\nfrom ShowTime s\r\ninner join Movie m on\r\nm.MovieId = s.MovieId\r\nGROUP BY m.MovieId, m.Title, m.Genre, m.Minutes";
             SqlCommand cmd = new SqlCommand(query, con);
 
@@ -87,7 +84,7 @@ namespace OOP_SD_Final_Project
             string ticketsSold;
             string displayString;
 
-            listBox1.Items.Add("Title - Tickets Sold");
+            movieTicketsListBox.Items.Add("Tickets Sold by Movie");
 
             while (reader.Read())
             {
@@ -96,8 +93,8 @@ namespace OOP_SD_Final_Project
 
                 displayString = movieTitle+ " -  " + ticketsSold;
                
-
-                listBox1.Items.Add(displayString);
+                // Add the movie and tickets sold to the listBox.
+                movieTicketsListBox.Items.Add(displayString);
             }
         }
     }
