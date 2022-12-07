@@ -48,7 +48,11 @@ namespace OOP_SD_Final_Project
             form2.Show();
 
         }
-
+        /// <summary>
+        /// This button saves items into the Database when values are modified in the Form 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void movieBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -56,7 +60,11 @@ namespace OOP_SD_Final_Project
             this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
 
         }
-
+        /// <summary>
+        /// Loads data into the 'project_DatabaseDataSet.User' table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Screen3Form_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'project_DatabaseDataSet.Movie' table. You can move, or remove it, as needed.

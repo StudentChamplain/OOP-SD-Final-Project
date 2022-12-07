@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Client.cs" />
+    <Compile Include="DBConnection.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="Project_DatabaseDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

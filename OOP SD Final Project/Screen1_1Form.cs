@@ -18,18 +18,8 @@ namespace OOP_Design_Project
     {
 
 
-
-
-
-        /*
          
-         INSERT INTO [User] (Email, FirstName, LastName, Password, SignUpDateTime, Role) VALUES (@Email,@FirstName,@LastName,@Password,@SignUpDateTime,@Role); 
-
-         
-         
-         
-         
-         */
+        
         /// <summary>
         /// 
         /// Form Constructor which loads components of Screen1_1Form.
@@ -40,7 +30,7 @@ namespace OOP_Design_Project
         }
 
         /// <summary>
-        /// Button which leads User to Form 1.2 (Sign-up Confirmation)
+        /// Button will lead User to a Login Confirmation form if the email is validated to be unique 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -49,13 +39,12 @@ namespace OOP_Design_Project
            
             if(ValidateEmail() == true)
             {
-                //INSERTING THE USER INTO THE USERS TABLE
+                
 
                 DateTime now = DateTime.Now;
-                string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                    "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
-                SqlConnection con = new SqlConnection(connstring);
-                con.Open();
+
+                SqlConnection con = DBConnection.getInstance();
+
                 string query = "INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES ('" + emailTextBox.Text.Trim() + "', '" + firstNameTextBox.Text + "' , '" + lastNameTextBox.Text + "' , '" + passwordTextBox.Text + "' , '" + now + "',  '" + "Client" + "')";
                 SqlCommand cmd = new SqlCommand(query, con);
                 cmd.ExecuteNonQuery();
@@ -82,10 +71,6 @@ namespace OOP_Design_Project
 
                 con.Close();
 
-
-
-                //Client newCLient = new Client();
-
                 Screen1_2Form form1_2 = new Screen1_2Form();
                 form1_2.Show();
                 this.Hide();
@@ -93,10 +78,6 @@ namespace OOP_Design_Project
 
         }
 
-        /*INSERT INTO [dbo].[User] ([Email], [FirstName], [LastName], [Password], [SignUpDateTime], [Role]) VALUES (@Email, @FirstName, @LastName, @Password, @SignUpDateTime, @Role);
-    SELECT UserId, Email, FirstName, LastName, Password, SignUpDateTime, Role FROM [User] WHERE (UserId = SCOPE_IDENTITY())
-         * 
-         */
 
         /// <summary>
         /// Button which hides and closes the form.
@@ -120,7 +101,11 @@ namespace OOP_Design_Project
             form1.Show();
 
         }
-
+        /// <summary>
+        /// When clicking on save button the form will be saving the changes to the database 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -128,14 +113,21 @@ namespace OOP_Design_Project
             this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
 
         }
-
+        /// <summary>
+        /// Loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Screen1_1Form_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
+            
             this.userTableAdapter.Fill(this.project_DatabaseDataSet.User);
 
         }
-
+        /// <summary>
+        /// This method will connect to the database and verify if the email has already been taken or if the email entered contains a "@" symbol. If so it returns a true value.
+        /// </summary>
+        /// <returns> bool = isValid </returns>
         private bool ValidateEmail()
         {
             string email = emailTextBox.Text.Trim();
@@ -143,10 +135,8 @@ namespace OOP_Design_Project
 
             if (email.Contains('@'))
             {
-                string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                    "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
-                SqlConnection con = new SqlConnection(connstring);
-                con.Open();
+                SqlConnection con = DBConnection.getInstance();
+
                 string query = "Select * from [User] where Email ='" + email + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
 
@@ -167,12 +157,13 @@ namespace OOP_Design_Project
                 {
                     isValid = true;
                 }
+                con.Close();
             }
             else
             {
                 MessageBox.Show("Please enter a valid email address.");
             }
-
+           
             return isValid;
         }
     }

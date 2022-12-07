@@ -26,12 +26,13 @@ namespace OOP_SD_Final_Project
         }
 
         /// <summary>
-        /// Button which leads User to Form 7 (Client Main Menu) or Form 2 (Manager Main Menu) 
+        /// When clicking on the button the program will connect to the database and verify the user email and the password were not already taken. If they are not taken the program will add the values to the table USers and direct the User either to Client Section of the Program or the Manager Section 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void logInButton_Click(object sender, EventArgs e)
         {
+            //email Validation
             if (ValidateEmail())
             {
                 string password = passwordTextBox.Text;
@@ -39,10 +40,11 @@ namespace OOP_SD_Final_Project
 
 
 
-                string connstring = "Data Source = (LocalDB)\\MSSQLLocalDB; " +
-                    "AttachDbFilename = C:\\xyz\\Project Database.mdf; Integrated Security = True; Connect Timeout = 30";
-                SqlConnection con = new SqlConnection(connstring);
-                con.Open();
+               
+                //link to SQL Connection 
+                SqlConnection con = DBConnection.getInstance();
+                
+
                 string query = "Select * from [User] where Password= '" + password + "' AND Email ='" + email + "'";
                 SqlCommand cmd = new SqlCommand(query, con);
 
@@ -60,7 +62,7 @@ namespace OOP_SD_Final_Project
                     firstName = reader["FirstName"].ToString();
                     lastName = reader["LastName"].ToString();
                     role = reader["Role"].ToString();
-                  //  MessageBox.Show(userId.ToString());
+                 
                     verification = true;
 
                     // Set the active user to contain the relevant data.
@@ -68,10 +70,10 @@ namespace OOP_SD_Final_Project
 
                 }
 
-                //  VERIFY WITH NOAH HOW TO IDENTIFY IF A USER IS A MANAGER OR A CLIENT
+               
                 if (verification)
                 {
-                    //MessageBox.Show("logged in");
+                    
 
                     if (role == "Client")/*USER IS PART OF THE CLIENTS*/
                     {
@@ -95,8 +97,10 @@ namespace OOP_SD_Final_Project
                 {
                     MessageBox.Show("wrong email or password");
                 }
+
+                con.Close();
             }
-            
+
 
 
         }
@@ -136,7 +140,11 @@ namespace OOP_SD_Final_Project
 
             User.ActiveUser = newUser;
         }
-
+        /// <summary>
+        /// this Methodd will save the changes done to the database when clickin on the save button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void userBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -144,7 +152,11 @@ namespace OOP_SD_Final_Project
             this.tableAdapterManager.UpdateAll(this.project_DatabaseDataSet);
 
         }
-
+        /// <summary>
+        /// Loads data into the 'project_DatabaseDataSet.User' table
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Screen1_3Form_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'project_DatabaseDataSet.User' table. You can move, or remove it, as needed.
@@ -152,6 +164,10 @@ namespace OOP_SD_Final_Project
 
         }
 
+        /// <summary>
+        /// this method will validate if the email has a "@" symbol and if so it will return a true statement.
+        /// </summary>
+        /// <returns>bool </returns>
         private bool ValidateEmail()
         {
             string email = emailTextBox.Text.Trim();
