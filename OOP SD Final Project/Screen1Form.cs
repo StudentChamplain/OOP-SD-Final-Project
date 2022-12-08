@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The form that initially greets the user upon opening the program.
+    /// </summary>
     public partial class Screen1Form : Form
     {
         /// <summary>

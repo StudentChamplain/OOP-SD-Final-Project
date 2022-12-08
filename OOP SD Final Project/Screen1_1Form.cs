@@ -14,6 +14,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace OOP_Design_Project
 {
+    /// <summary>
+    /// Form in which the user enters their credentials to create an account.
+    /// </summary>
     public partial class Screen1_1Form : Form
     {
         /// <summary>

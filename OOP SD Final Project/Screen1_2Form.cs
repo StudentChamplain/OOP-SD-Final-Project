@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace OOP_Design_Project
 {
+    /// <summary>
+    /// Form that displays the ID of the newly signed-in client.
+    /// </summary>
     public partial class Screen1_2Form : Form
     {
         /// <summary>
@@ -19,6 +22,7 @@ namespace OOP_Design_Project
         public Screen1_2Form()
         {
             InitializeComponent();
+            DisplayActiveUserId();
         }
         /// <summary>
         /// Button which leads User to Form 7 (Client Main menu)
@@ -56,7 +60,14 @@ namespace OOP_Design_Project
 
             Screen1Form form1 = new Screen1Form();
             form1.Show();
+        }
 
+        /// <summary>
+        /// Displays the ID of the newly signed-in user.
+        /// </summary>
+        private void DisplayActiveUserId()
+        {
+            iDNumberLabel.Text = User.ActiveUser.StringifyId();
         }
 
 

@@ -55,17 +55,19 @@
             // clientsLabel
             // 
             this.clientsLabel.AutoSize = true;
-            this.clientsLabel.Location = new System.Drawing.Point(382, 85);
+            this.clientsLabel.Location = new System.Drawing.Point(509, 105);
+            this.clientsLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clientsLabel.Name = "clientsLabel";
-            this.clientsLabel.Size = new System.Drawing.Size(60, 13);
+            this.clientsLabel.Size = new System.Drawing.Size(73, 16);
             this.clientsLabel.TabIndex = 24;
             this.clientsLabel.Text = "Clients List ";
             // 
             // mainMenuButton
             // 
-            this.mainMenuButton.Location = new System.Drawing.Point(339, 389);
+            this.mainMenuButton.Location = new System.Drawing.Point(452, 479);
+            this.mainMenuButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.mainMenuButton.Name = "mainMenuButton";
-            this.mainMenuButton.Size = new System.Drawing.Size(114, 32);
+            this.mainMenuButton.Size = new System.Drawing.Size(152, 39);
             this.mainMenuButton.TabIndex = 23;
             this.mainMenuButton.Text = "Back";
             this.mainMenuButton.UseVisualStyleBackColor = true;
@@ -74,35 +76,40 @@
             // companyNameLabel
             // 
             this.companyNameLabel.AutoSize = true;
-            this.companyNameLabel.Location = new System.Drawing.Point(88, 61);
+            this.companyNameLabel.Location = new System.Drawing.Point(117, 75);
+            this.companyNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.companyNameLabel.Name = "companyNameLabel";
-            this.companyNameLabel.Size = new System.Drawing.Size(113, 13);
+            this.companyNameLabel.Size = new System.Drawing.Size(142, 16);
             this.companyNameLabel.TabIndex = 22;
             this.companyNameLabel.Text = "The Theater Company";
             // 
             // idNumberLabel
             // 
             this.idNumberLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.idNumberLabel.Location = new System.Drawing.Point(618, 29);
+            this.idNumberLabel.Location = new System.Drawing.Point(824, 36);
+            this.idNumberLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.idNumberLabel.Name = "idNumberLabel";
-            this.idNumberLabel.Size = new System.Drawing.Size(94, 33);
+            this.idNumberLabel.Size = new System.Drawing.Size(125, 40);
             this.idNumberLabel.TabIndex = 21;
+            this.idNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // userNameLabel
             // 
             this.userNameLabel.AutoSize = true;
-            this.userNameLabel.Location = new System.Drawing.Point(602, 73);
+            this.userNameLabel.Location = new System.Drawing.Point(803, 90);
+            this.userNameLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.userNameLabel.Name = "userNameLabel";
-            this.userNameLabel.Size = new System.Drawing.Size(71, 13);
+            this.userNameLabel.Size = new System.Drawing.Size(87, 16);
             this.userNameLabel.TabIndex = 20;
             this.userNameLabel.Text = "USER NAME";
             // 
             // userIdLabel
             // 
             this.userIdLabel.AutoSize = true;
-            this.userIdLabel.Location = new System.Drawing.Point(571, 40);
+            this.userIdLabel.Location = new System.Drawing.Point(761, 49);
+            this.userIdLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.userIdLabel.Name = "userIdLabel";
-            this.userIdLabel.Size = new System.Drawing.Size(47, 13);
+            this.userIdLabel.Size = new System.Drawing.Size(56, 16);
             this.userIdLabel.TabIndex = 19;
             this.userIdLabel.Text = "User Id: ";
             // 
@@ -119,60 +126,76 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.userDataGridView.DataSource = this.userBindingSource;
-            this.userDataGridView.Location = new System.Drawing.Point(22, 101);
+            this.userDataGridView.Location = new System.Drawing.Point(29, 124);
+            this.userDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.userDataGridView.Name = "userDataGridView";
             this.userDataGridView.ReadOnly = true;
-            this.userDataGridView.Size = new System.Drawing.Size(765, 282);
+            this.userDataGridView.RowHeadersWidth = 51;
+            this.userDataGridView.Size = new System.Drawing.Size(1020, 347);
             this.userDataGridView.TabIndex = 25;
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "UserId";
             this.dataGridViewTextBoxColumn1.HeaderText = "UserId";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 125;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Email";
             this.dataGridViewTextBoxColumn2.HeaderText = "Email";
+            this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 125;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "FirstName";
             this.dataGridViewTextBoxColumn3.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn3.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dataGridViewTextBoxColumn3.Width = 125;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "LastName";
             this.dataGridViewTextBoxColumn4.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn4.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.dataGridViewTextBoxColumn4.Width = 125;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Password";
             this.dataGridViewTextBoxColumn5.HeaderText = "Password";
+            this.dataGridViewTextBoxColumn5.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            this.dataGridViewTextBoxColumn5.Width = 125;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "SignUpDateTime";
             this.dataGridViewTextBoxColumn6.HeaderText = "SignUpDateTime";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            this.dataGridViewTextBoxColumn6.Width = 125;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Role";
             this.dataGridViewTextBoxColumn7.HeaderText = "Role";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            this.dataGridViewTextBoxColumn7.Width = 125;
             // 
             // userBindingSource
             // 
@@ -193,16 +216,17 @@
             this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager.MovieTableAdapter = null;
             this.tableAdapterManager.RoomTableAdapter = null;
-            //this.tableAdapterManager.ShowTimeTableAdapter = null;
+            this.tableAdapterManager.ShowTimeTableAdapter = null;
             this.tableAdapterManager.TicketTableAdapter = null;
             this.tableAdapterManager.UpdateOrder = OOP_SD_Final_Project.Project_DatabaseDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.UsersTableAdapter = null;
             this.tableAdapterManager.UserTableAdapter = this.userTableAdapter;
             // 
             // Screen6Form
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(959, 450);
+            this.ClientSize = new System.Drawing.Size(1279, 554);
             this.Controls.Add(this.userDataGridView);
             this.Controls.Add(this.clientsLabel);
             this.Controls.Add(this.mainMenuButton);
@@ -210,6 +234,7 @@
             this.Controls.Add(this.idNumberLabel);
             this.Controls.Add(this.userNameLabel);
             this.Controls.Add(this.userIdLabel);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Screen6Form";
             this.Text = "Clients List ";
             this.Load += new System.EventHandler(this.Screen6Form_Load);

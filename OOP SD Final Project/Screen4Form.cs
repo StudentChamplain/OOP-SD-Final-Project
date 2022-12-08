@@ -12,6 +12,11 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The manager's form to edit the list of Showtimes.
+    /// </summary>
+    /// <remarks>Contains read-only versions of the movie and room table
+    /// to associated the appropriate IDs in the Showtimes table.</remarks>
     public partial class Screen4Form : Form
     {
         /// <summary>

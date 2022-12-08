@@ -74,6 +74,7 @@
             this.idNumberLabel.Name = "idNumberLabel";
             this.idNumberLabel.Size = new System.Drawing.Size(125, 40);
             this.idNumberLabel.TabIndex = 13;
+            this.idNumberLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // userNameLabel
             // 

@@ -14,10 +14,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The manager's form to edit the list of movies.
+    /// </summary>
     public partial class Screen3Form : Form
     {
         /// <summary>
-        /// 
         /// Form Constructor which loads components of Screen3Form.
         /// </summary>
         public Screen3Form()

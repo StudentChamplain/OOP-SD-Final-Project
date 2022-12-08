@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The manager's form to consult the list of Clients.
+    /// </summary>
     public partial class Screen6Form : Form
     {
         /// <summary>

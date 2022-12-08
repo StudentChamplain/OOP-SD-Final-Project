@@ -12,11 +12,13 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The client's homescreen.
+    /// </summary>
     public partial class Screen7Form : Form
     {
 
         /// <summary>
-        /// 
         /// Form Constructor which loads components of Screen7Form.
         /// </summary>
         public Screen7Form()

@@ -13,6 +13,9 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The form for returning users to log-in.
+    /// </summary>
     public partial class Screen1_3Form : Form
     {
         /// <summary>

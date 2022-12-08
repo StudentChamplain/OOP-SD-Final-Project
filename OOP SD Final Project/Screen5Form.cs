@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The manager's form to edit the list of screening rooms.
+    /// </summary>
     public partial class Screen5Form : Form
     {
         

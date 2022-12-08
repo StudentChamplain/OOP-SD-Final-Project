@@ -12,6 +12,9 @@ using System.Windows.Forms;
 
 namespace OOP_Design_Project
 {
+    /// <summary>
+    /// The manager's home screen.
+    /// </summary>
     public partial class Screen2Form : Form
     {
         /// <summary>

@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// The client's form to consult the list of Showtimes.
+    /// </summary>
     public partial class Screen8Form : Form
     {
         /// <summary>
