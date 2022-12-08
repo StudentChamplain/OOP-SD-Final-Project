@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace OOP_SD_Final_Project
 {
+    /// <summary>
+    /// Class representing a user.
+    /// </summary>
+    /// <remarks>Used for displaying the information of the logged-in user.</remarks>
     public class User
     {
         private int userId;
